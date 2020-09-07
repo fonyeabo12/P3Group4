@@ -18,6 +18,24 @@ router.get('/', (req, res) => {
 
 });
 
+router.post('/save', (req, res) => {
+
+    const data = req.body;
+
+    const newPropertySearch = new PropertySearch(data);
+
+    newPropertySearch.save((error) => {
+        if (error) {
+            res.status(500).json({ msg:'Sorry, internal sever errors' });
+            return;
+        } 
+        // PropertySearch
+        return res.json({
+            msg: 'Your data has been saved!!!'
+        });
+    });
+});
+
 router.get('/name', (req, res) => {
     const data = {
         username: 'williams',
