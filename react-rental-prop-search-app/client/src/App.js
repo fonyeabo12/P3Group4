@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+
 class App extends React.Component {
   
   state = {
@@ -49,30 +52,34 @@ class App extends React.Component {
     // JSX
     return (
       <div>
-        <h2>Welcome to my App</h2>
-        <form onSubmit={this.submit}>
-          <div className="form-input">
-            <input
-              type="text"
-              name="title"
-              placeholder="Enter title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form-input">
-            <textarea 
-              placeholder="Enter body" 
-              name="body" 
-              cols="30" 
-              rows="10" 
-              value={this.state.body} 
-              onChange={this.handleChange}
-              >
-            </textarea>
-          </div>
-          <button>Submit</button>
-        </form>
+        <Container>
+
+          <h2>Welcome to my App</h2>
+          <Form onSubmit={this.submit}>
+            <div className="form-input">
+              <input
+                type="text"
+                name="title"
+                placeholder="Enter title"
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-input">
+              <textarea 
+                placeholder="Enter body" 
+                name="body" 
+                cols="30" 
+                rows="10" 
+                value={this.state.body} 
+                onChange={this.handleChange}
+                >
+              </textarea>
+            </div>
+            <button>Submit</button>
+          </Form>
+
+        </Container>
       </div>
     );
   }
