@@ -1,25 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import About from "./components/Pages/About";
+import Future from "./components/Pages/Future";
+import Contact from "./components/Pages/Contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Login from "./components/Pages/Login";
+import propertyFilter from "./components/Pages/propertyFilter";
+import searchResults from "./components/Pages/searchResults";
+import startSearch from "./components/Pages/startSearch";
+import Team from "./components/Pages/Team";
+import generateSlug from "generate-slug";
+
 import './App.css';
 
 function App() {
+  const slug = new generateSlug()
+  const string = "/start Search"
+  const slug1 = slug.toSlug(string);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Router>
+      <div>
+        <Navbar />
+          <Route exact path="/" component={About} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Contact" component={Contact} />
+           <Route exact path={slug1} component={startSearch} />
+          <Route exact path="/searchResults" component={searchResults} />
+           <Route exact path="/propertyFilter" component={propertyFilter} />
+          <Route exact path="/Team" component={Team} />
+           <Route exact path="/Future" component={Future} />
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
