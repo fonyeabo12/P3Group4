@@ -15,6 +15,6 @@ export default {
   },
   // Saves a property to the database
   saveProperty: function(bookData) {
-    return axios.post("/api/properties", bookData);
+    return axios.post("/api/propertie.s", bookData);
   }
 };
