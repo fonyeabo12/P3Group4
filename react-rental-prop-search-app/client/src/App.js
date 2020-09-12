@@ -3,10 +3,11 @@ import axios from 'axios';
 
 import './App.css';
 
-import carInterior from './Images/car-interior.jpg';
-import PropertyCard from './components/card/property-card.component';
-
-import Card from 'react-bootstrap/Card';
+// import carInterior from './Images/car-interior.jpg';
+import PropertyCard from './components/card/property-card.component.jsx';
+import SearchField from './components/search-field/search-field.component.jsx';
+import { Container } from 'react-bootstrap';
+// import Card from 'react-bootstrap/Card';
 // import Button from 'react-bootstrap/Button';
 
 class App extends React.Component {
@@ -82,16 +83,9 @@ class App extends React.Component {
 
     if (!posts.length) return null;
 
-    // fakePost = {
-    //   title: 'adfad',
-    //   body: 'blah blah blah'
-    // }
-
     return posts.map((post, index) => (
       <div key={index} className="property-search-display">
-
         <PropertyCard post={ post } />
-
       </div>
     ));
   };
@@ -100,90 +94,18 @@ class App extends React.Component {
     console.log('State: ', this.state);
 
     // JSX
+
     return (
-      <div className="app">
+      <Container>
 
-        <div className='card-container'>
-            <img 
-                alt='monster' 
-                src=""
-            />
-            <h2> Filler heading text </h2>
-            <p> Filler body text </p>
-            {/* <h2> {props.monster.name} </h2>
-            <p> {props.monster.email} </p> */}
-        </div>
-
-          <h2>Welcome to my App</h2>
-
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={carInterior} />
-            <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-                <form onSubmit={this.submit}>
-                  <div className="form-input">
-                    <input
-                      type="text"
-                      name="title"
-                      placeholder="Enter title"
-                      value={this.state.title}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="form-input">
-                    <input 
-                      type="text"
-                      name="body"
-                      placeholder="Enter body"
-                      value={this.state.body}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="form-input">
-                    <input 
-                      type="text"
-                      name="zipcode"
-                      placeholder="Enter zipcode"
-                      value={this.state.zipcode}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="form-input">
-                    <input 
-                      type="text"
-                      name="numberOfBeds"
-                      placeholder="Enter number of bedrooms"
-                      value={this.state.numberOfBeds}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="form-input">
-                    <input 
-                      type="text"
-                      name="numberOfBaths"
-                      placeholder="Enter number of bathrooms"
-                      value={this.state.numberOfBaths}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <button>Submit</button>
-                </form>
+            <SearchField zipcode={this.state.zipcode} handleChange={this.handleChange} />
 
                 <div className="property-search">
                   {this.displayPropertySearch(this.state.posts)}
                 </div>
 
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-              </Card.Text>
+      </Container>
 
-              </Card.Body>
-          </Card>
-
-          
-
-      </div>
     );
   }
 }
