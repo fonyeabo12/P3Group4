@@ -5,6 +5,13 @@ const Schema = mongoose.Schema;
 const PropertySearchSchema = new Schema({
     title: String,
     body: String,
+    zipcode: String,
+    // streetAddress: String,
+    numberOfBeds: String,
+    numberOfBaths: String,
+    // maxRent: String,
+    // minRent: String,
+    // squareFoot: String,
     date: {type: String, default: Date.now()}
 
     // zipCode:    {type: Number, required: true, minlength: 5, maxlength: 5},
