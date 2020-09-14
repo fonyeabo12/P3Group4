@@ -94,16 +94,13 @@ class App extends React.Component {
     console.log('State: ', this.state);
 
     // JSX
-
     return (
       <Container>
 
             <SearchField zipcode={this.state.zipcode} handleChange={this.handleChange} />
-
                 <div className="property-search">
                   {this.displayPropertySearch(this.state.posts)}
                 </div>
-
       </Container>
 
     );

@@ -2,6 +2,7 @@ import React from 'react';
 
 const SearchField = (props) => (
 
+    <form>
         <div className="form-input">
             <input 
                 type="text"
@@ -11,6 +12,8 @@ const SearchField = (props) => (
                 onChange={(event) => props.handleChange(event)}
             />
         </div>
+            <button onClick={(event) => props.displayPropertySearch(event)}>Submit</button>
+    </form>
 
 );
 
