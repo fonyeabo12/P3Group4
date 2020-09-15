@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Pages/home";
 import axios from 'axios';
-import About from "./components/Pages/About";
+import About from "./components/Pages/about";
 import Future from "./components/Pages/future";
 import Contact from "./components/Pages/contact";
 import Navbar from "./components/Navbar";
@@ -24,7 +25,7 @@ function App() {
      <Router>
       <div>
         <Navbar />
-          <Route exact path="/" component={About} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Contact" component={Contact} />
