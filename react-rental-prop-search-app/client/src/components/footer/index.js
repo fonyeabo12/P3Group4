@@ -1,10 +1,13 @@
 import React from "react";
+import "./style.css";
 
 function Footer() {
   return (
     <footer>
-      <div className="container">
-        <span>This is a sticky footer</span>
+      <div className="footer">
+        <span className="text-muted">
+          Copyright © PropertySearch.com 2020 - All Rights Reserved
+        </span>
       </div>
     </footer>
   );
