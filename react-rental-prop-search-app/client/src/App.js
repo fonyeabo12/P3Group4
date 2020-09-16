@@ -1,110 +1,46 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Pages/home";
 import axios from 'axios';
+import About from "./components/Pages/about";
+import Future from "./components/Pages/future";
+import Contact from "./components/Pages/contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Login from "./components/Pages/login";
+import propertyFilter from "./components/Pages/propertyFilter";
+import searchResults from "./components/Pages/searchResults";
+import startSearch from "./components/Pages/startSearch";
+import Team from "./components/Pages/Team";
+import generateSlug from "generate-slug";
+
 
 import './App.css';
 
-// import carInterior from './Images/car-interior.jpg';
-import PropertyCard from './components/card/property-card.component.jsx';
-import SearchField from './components/search-field/search-field.component.jsx';
-import { Container } from 'react-bootstrap';
-// import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
-
-class App extends React.Component {
-
-    state = {
-      title: '',
-      body: '',
-      zipcode: '',
-      numberOfBeds: '',
-      numberOfBaths: '',
-      posts: []
-    }
-
-  componentDidMount = () => {
-    this.getPropertySearch();
-  };
-
-  getPropertySearch = () => {
-    axios.get('/api')
-    .then((response) => {
-      const data = response.data;
-      this.setState({ posts: data });
-      console.log('Data has been received!!');
-    })
-    .catch(() => {
-      alert('Error retrieving data');
-    });
-  };
-
-  handleChange = ({ target }) => {
-    const { name, value } = target;
-      this.setState({ [name]: value });
-  };
-
-  submit = (event) => {
-    event.preventDefault();
-
-    const payload = {
-      title: this.state.title,
-      body: this.state.body,
-      zipcode: this.state.zipcode,
-      numberOfBeds: this.state.numberOfBeds,
-      numberOfBaths: this.state.numberOfBaths
-    };
-
-    axios({
-      url: '/api/save',
-      method: 'POST',
-      data: payload
-    })
-      .then(() => {
-        console.log('Data has been sent to the server');
-        this.resetUserInputs();
-        this.getPropertySearch();
-      })
-      .catch(() => {
-        console.log('Internal server error');
-      });
-
-  };
-
-  resetUserInputs = () => {
-    this.setState({
-      title: '',
-      body: '',
-      zipcode: '',
-      numberOfBeds: '',
-      numberOfBaths: ''
-    });
-  };
-
-  displayPropertySearch = (posts) => {
-
-    if (!posts.length) return null;
-
-    return posts.map((post, index) => (
-      <div key={index} className="property-search-display">
-        <PropertyCard post={ post } />
+function App() {
+  const slug = new generateSlug()
+  const string = "/start Search"
+  const slug1 = slug.toSlug(string);
+  return (
+     <Router>
+      <div>
+        <Navbar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Contact" component={Contact} />
+           <Route exact path={slug1} component={startSearch} />
+          <Route exact path="/searchResults" component={searchResults} />
+           <Route exact path="/propertyFilter" component={propertyFilter} />
+          <Route exact path="/Team" component={Team} />
+           <Route exact path="/Future" component={Future} />
+        <Footer />
       </div>
-    ));
-  };
-
-  render() {
-    console.log('State: ', this.state);
-
-    // JSX
-    return (
-      <Container>
-
-            <SearchField zipcode={this.state.zipcode} handleChange={this.handleChange} />
-                <div className="property-search">
-                  {this.displayPropertySearch(this.state.posts)}
-                </div>
-      </Container>
-
-    );
-  }
+    </Router>
+  );
 }
+
+
+
 
 export default App;
