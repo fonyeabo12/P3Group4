@@ -9,10 +9,11 @@ function NavBar() {
       <Navbar.Brand href="#home">
         <img src={pslogolg} style={{ width: 200 }} />
       </Navbar.Brand>
-      <Nav className="mr-auto">
+      <Nav>
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#profile">Profile</Nav.Link>
         <Nav.Link href="#about">About</Nav.Link>
+        <Nav.Link href="#team">Meet The Team</Nav.Link>
         <Nav.Link href="#signout">Sign Out</Nav.Link>
       </Nav>
     </Navbar>

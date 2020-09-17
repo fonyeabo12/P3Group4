@@ -9,3 +9,8 @@
   background: #b3e0e8;
   position: relative;
 }
+
+.nav-link > a {
+  font-size: 20px;
+  color: #b3e0e8;
+}

@@ -1,6 +1,6 @@
 .footer {
-  min-height: 100px;
-  background: #36a0b5;
+  min-height: 200px;
+  background: #b3e0e8;
   position: relative;
 }
 .footer span {
@@ -10,5 +10,9 @@
   left: 0;
   right: 0;
   padding: 3px;
-  background: #b3e0e8;
+  background: #36a0b5;
+}
+.footer > img {
+  padding: 2px 1px;
+  align-items: center;
 }
