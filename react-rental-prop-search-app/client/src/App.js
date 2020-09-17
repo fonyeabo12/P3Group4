@@ -79,11 +79,11 @@ class App extends React.Component {
     });
   };
 
-  displayPropertySearch = (posts) => {
+  displayPropertySearch = () => {
 
-    if (!posts.length) return null;
+    if (!this.state.posts.length) return null;
 
-    return posts.map((post, index) => (
+    return this.state.posts.map((post, index) => (
       <div key={index} className="property-search-display">
         <PropertyCard post={ post } />
       </div>
@@ -97,7 +97,7 @@ class App extends React.Component {
     return (
       <Container>
 
-            <SearchField zipcode={this.state.zipcode} handleChange={this.handleChange} />
+            <SearchField displayPropertySearch={this.displayPropertySearch} zipcode={this.state.zipcode} handleChange={this.handleChange} />
                 <div className="property-search">
                   {this.displayPropertySearch(this.state.posts)}
                 </div>

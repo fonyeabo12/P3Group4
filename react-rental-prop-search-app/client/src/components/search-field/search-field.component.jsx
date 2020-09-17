@@ -12,7 +12,7 @@ const SearchField = (props) => (
                 onChange={(event) => props.handleChange(event)}
             />
         </div>
-            <button onClick={(event) => props.displayPropertySearch(event)}>Submit</button>
+            <button type="submit">Submit</button>
     </form>
 
 );
