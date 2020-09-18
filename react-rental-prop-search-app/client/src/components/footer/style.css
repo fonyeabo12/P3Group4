@@ -1,9 +1,12 @@
-.footer {
+footer {
   min-height: 200px;
   background: #b3e0e8;
   position: relative;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  color: #36a0b5;
 }
-.footer span {
+.footer-bottom {
   position: absolute;
   text-align: center;
   bottom: 0;
@@ -11,6 +14,7 @@
   right: 0;
   padding: 3px;
   background: #36a0b5;
+  color: white;
 }
 .footer > img {
   padding: 2px 1px;

@@ -6,8 +6,12 @@ import pslogolg from "../../Images/ps-full-logo.png";
 function NavBar() {
   return (
     <Navbar>
-      <Navbar.Brand href="#home">
-        <img src={pslogolg} style={{ width: 200 }} />
+      <Navbar.Brand href="home">
+        <img
+          src={pslogolg}
+          alt="ps brand logotype & symbol"
+          style={{ width: 200 }}
+        />
       </Navbar.Brand>
       <Nav>
         <Nav.Link href="#home">Home</Nav.Link>
