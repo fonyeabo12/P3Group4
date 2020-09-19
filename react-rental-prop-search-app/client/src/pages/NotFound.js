@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class SignIn extends Component {
+class NotFound extends Component {
   render() {
     return (
       <div>
-        <h2>This is the Sign In Page</h2>
+        <h1>404 Not Found</h1>
       </div>
     );
   }
 }
 
-export default SignIn;
+export default NotFound;
