@@ -1,7 +1,9 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./style.css";
 import pslogolg from "../../Images/ps-full-logo.png";
+import Home from "../../pages/Home";
 
 function NavBar() {
   return (
@@ -13,12 +15,17 @@ function NavBar() {
           style={{ width: 200 }}
         />
       </Navbar.Brand>
-      <Nav>
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#profile">Profile</Nav.Link>
-        <Nav.Link href="#about">About</Nav.Link>
-        <Nav.Link href="#team">Meet The Team</Nav.Link>
-        <Nav.Link href="#signout">Sign Out</Nav.Link>
+      <Nav className="justify-content-end">
+        <Nav.Item as="li">
+          <Nav.Link to="/home">Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link to="/profile">Profile</Nav.Link>
+        </Nav.Item>
+
+        <Nav.Link to="/about">About</Nav.Link>
+        <Nav.Link to="/team">Meet The Team</Nav.Link>
+        <Nav.Link to="/signout">Sign Out</Nav.Link>
       </Nav>
     </Navbar>
   );
