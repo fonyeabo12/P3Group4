@@ -4,8 +4,6 @@ import About from "./pages/About";
 import Filter from "./pages/Filter";
 import Login from "./pages/Login";
 import Properties from "./pages/Properties";
-import Saved from "./pages/Saved";
-import Search from "./pages/Search";
 import Nav from "./components/Nav";
 
 function App() {
@@ -17,12 +15,12 @@ function App() {
           <Route exact path={["/", "/properties"]}>
             <Properties />
           </Route>
-          <Route exact path="/properties/:id">
+          {/*<Route exact path="/properties/:id">
             <Detail />
           </Route>
           <Route>
             <NoMatch />
-          </Route>
+          </Route>*/}
         </Switch>
       </div>
     </Router>

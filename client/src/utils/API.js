@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all properties
   getProperties: function() {
-    return axios.get("/api/properties");
+    return axios.get("/api/allProperties");
   },
   // Gets the property with the given id
   getProperty: function(id) {
@@ -14,7 +14,7 @@ export default {
     return axios.delete("/api/properties/" + id);
   },
   // Saves a property to the database
-  saveProperty: function(bookData) {
-    return axios.post("/api/propertie.s", bookData);
+  saveProperty: function(propertyData) {
+    return axios.post("/api/properties", propertyData);
   }
 };

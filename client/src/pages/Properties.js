@@ -43,18 +43,22 @@ function Properties() {
     // Then reload properties from the database
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.title && formObject.author) {
-            API.saveProperty({
+        
+            let newProperty = {
                 addressLine1: formObject.addressLine1,
                 propertyType: formObject.propertyType,
                 bedrooms: formObject.bedrooms,
                 bathrooms: formObject.bathrooms,
                 lotSize: formObject.lotSize,
                 yearBuilt: formObject.yearBuilt
-            })
-                .then(res => loadProperties())
+            }
+            console.log(newProperty) 
+            API.saveProperty(newProperty)
+                .then(res =>{ 
+                    console.log(res)
+                    loadProperties()})
                 .catch(err => console.log(err));
-        }
+        
     };
 
     return (
@@ -96,14 +100,14 @@ function Properties() {
                             placeholder="Year Built (required)"
                         />
                         <FormBtn
-                            disabled={!(formObject.author && formObject.title)}
-                            onClick={handleFormSubmit}
+                            
+                        onClick={handleFormSubmit}
                         >
                             Submit Property
                 </FormBtn>
                     </form>
                 </Col>
-                <Col size="md-6 sm-12">
+                {/*<Col size="md-6 sm-12">
                     <Jumbotron>
                         <h1>Properties On My List</h1>
                     </Jumbotron>
@@ -123,7 +127,7 @@ function Properties() {
                     ) : (
                             <h3>No Results to Display</h3>
                         )}
-                </Col>
+                </Col>*/}
             </Row>
         </Container>
     );
