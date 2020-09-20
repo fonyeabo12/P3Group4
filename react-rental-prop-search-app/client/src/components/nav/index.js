@@ -1,34 +1,44 @@
-import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
 import "./style.css";
 import pslogolg from "../../Images/ps-full-logo.png";
-import Home from "../../pages/Home";
 
-function NavBar() {
-  return (
-    <Navbar>
-      <Navbar.Brand href="home">
-        <img
-          src={pslogolg}
-          alt="ps brand logotype & symbol"
-          style={{ width: 200 }}
-        />
-      </Navbar.Brand>
-      <Nav className="justify-content-end">
-        <Nav.Item as="li">
-          <Nav.Link to="/home">Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link to="/profile">Profile</Nav.Link>
-        </Nav.Item>
-
-        <Nav.Link to="/about">About</Nav.Link>
-        <Nav.Link to="/team">Meet The Team</Nav.Link>
-        <Nav.Link to="/signout">Sign Out</Nav.Link>
-      </Nav>
-    </Navbar>
-  );
+class Navigation extends Component {
+  render() {
+    return (
+      <div>
+        <Navbar>
+          <Navbar.Brand>
+            <Link to="/">
+              <img
+                src={pslogolg}
+                alt="ps brand logotype & symbol"
+                style={{ width: 200 }}
+              />
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav>
+              <Link className="noUnderline" to="/">
+                <NavItem>Home</NavItem>
+              </Link>
+              <Link className="noUnderline" to="/profile">
+                <NavItem>Profile</NavItem>
+              </Link>
+              <Link className="noUnderline" to="/about">
+                <NavItem>About</NavItem>
+              </Link>
+              <Link className="noUnderline" to="/signout">
+                <NavItem>Sign Out</NavItem>
+              </Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+    );
+  }
 }
 
-export default NavBar;
+export default Navigation;

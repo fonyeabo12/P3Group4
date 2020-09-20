@@ -3,14 +3,22 @@
   align-items: center;
 }
 .navbar-brand > img {
-  padding: 2px 1px;
+  padding: 5px 5px;
 }
 .navbar {
   background: #b3e0e8;
   position: relative;
 }
 
-.nav-link > a {
+.nav-item {
   font-size: 20px;
-  color: #b3e0e8;
+  color: black;
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+.nav-item:hover,
+.noUnderline:hover {
+  color: white;
+  text-decoration: none;
 }

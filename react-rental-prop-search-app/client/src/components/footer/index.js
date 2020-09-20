@@ -8,19 +8,18 @@ function Footer() {
       <div className="container">
         <div className="row middle">
           <div className="col-md-3 col-sm-6">
-            <h4>Contact Us</h4>
-            <ul className="list-unstyled">
-              <li>Houston, Tx</li>
-              <li>(832) 555-555</li>
-              <li>test@property.com</li>
-            </ul>
+            <img
+              src={pslogosm}
+              alt="ps brand logotype & symbol"
+              style={{ width: 75 }}
+            />
           </div>
           <div className="col-md-3 col-sm-6">
-            <h4>Lorem ipsum</h4>
+            <h4>Contact Us</h4>
             <ul className="list-unstyled">
-              <li>one</li>
-              <li>two</li>
-              <li>three</li>
+              <li>Houston, Texas</li>
+              <li>(832) 555-5555</li>
+              <li>contact@propertysearch.com</li>
             </ul>
           </div>
           <div className="col-md-3 col-sm-6">

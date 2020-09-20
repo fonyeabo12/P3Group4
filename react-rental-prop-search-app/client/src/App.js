@@ -1,14 +1,14 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Routes from "./components/routes";
-import NavBar from "./components/nav";
+import Navigation from "./components/nav";
 import Footer from "./components/footer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App container">
-      <NavBar />
+      <Navigation />
       <Routes />
       <Footer />
     </div>

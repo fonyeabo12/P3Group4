@@ -16,7 +16,9 @@ footer {
   background: #36a0b5;
   color: white;
 }
-.footer > img {
+img {
   padding: 2px 1px;
   align-items: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
