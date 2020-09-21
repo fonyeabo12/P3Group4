@@ -1,42 +1,32 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import "./style.css";
 import pslogolg from "../../Images/ps-full-logo.png";
 
 class Navigation extends Component {
   render() {
     return (
-      <div>
-        <Navbar>
-          <Navbar.Brand>
-            <Link to="/">
-              <img
-                src={pslogolg}
-                alt="ps brand logotype & symbol"
-                style={{ width: 200 }}
-              />
-            </Link>
+      <Container>
+        <Navbar expand="lg">
+          <Navbar.Brand href="/">
+            <img
+              src={pslogolg}
+              alt="ps brand logotype & symbol"
+              style={{ width: 200 }}
+            />
           </Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse>
-            <Nav>
-              <Link className="noUnderline" to="/">
-                <NavItem>Home</NavItem>
-              </Link>
-              <Link className="noUnderline" to="/profile">
-                <NavItem>Profile</NavItem>
-              </Link>
-              <Link className="noUnderline" to="/about">
-                <NavItem>About</NavItem>
-              </Link>
-              <Link className="noUnderline" to="/signout">
-                <NavItem>Sign Out</NavItem>
-              </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/profile">Profile</Nav.Link>
+              <Nav.Link href="/about">About</Nav.Link>
+              <Nav.Link href="/signout">Sign Out</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </div>
+      </Container>
     );
   }
 }

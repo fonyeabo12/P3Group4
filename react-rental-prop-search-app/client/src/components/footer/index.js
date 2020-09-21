@@ -1,18 +1,15 @@
 import React from "react";
 import "./style.css";
 import pslogosm from "../../Images/ps-simple-logo.png";
+import { Container } from "react-bootstrap";
 
 function Footer() {
   return (
-    <footer>
-      <div className="container">
+    <Container>
+      <footer>
         <div className="row middle">
           <div className="col-md-3 col-sm-6">
-            <img
-              src={pslogosm}
-              alt="ps brand logotype & symbol"
-              style={{ width: 75 }}
-            />
+            <img src={pslogosm} alt="ps brand logotype & symbol" />
           </div>
           <div className="col-md-3 col-sm-6">
             <h4>Contact Us</h4>
@@ -23,12 +20,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col-md-3 col-sm-6">
-            <h4>Lorem ipsum</h4>
-            <ul className="list-unstyled">
-              <li>one</li>
-              <li>two</li>
-              <li>three</li>
-            </ul>
+            <h4>Meet The Team</h4>
           </div>
         </div>
         {/* Footer Bottom */}
@@ -37,8 +29,8 @@ function Footer() {
             &copy;{new Date().getFullYear()} Property Search
           </p>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </Container>
   );
 }
 

@@ -1,5 +1,7 @@
 footer {
-  min-height: 200px;
+  font-family: "Rubik", sans-serif;
+
+  min-height: 300px;
   background: #b3e0e8;
   position: relative;
   padding-top: 25px;
@@ -21,4 +23,5 @@ img {
   align-items: center;
   padding-top: 5px;
   padding-bottom: 10px;
+  width: 100px;
 }
