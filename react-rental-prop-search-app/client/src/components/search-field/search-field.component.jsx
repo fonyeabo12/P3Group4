@@ -1,8 +1,9 @@
 import React from 'react';
 
 const SearchField = (props) => (
-
-    <form>
+    <div>
+    {console.log(props)}
+    <form onSubmit={(event) => props.submitIt(event)}>
         <div className="form-input">
             <input 
                 type="text"
@@ -14,6 +15,7 @@ const SearchField = (props) => (
         </div>
             <button type="submit">Submit</button>
     </form>
+    </div>
 
 );
 

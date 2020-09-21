@@ -1,19 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Pages/home";
-import axios from 'axios';
-import About from "./components/Pages/about";
-import Future from "./components/Pages/future";
-import Contact from "./components/Pages/contact";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Login from "./components/Pages/login";
+import About from "./components/Pages/About";
+import Future from "./components/Pages/Future";
+import Contact from "./components/Pages/Contact";
+import Navbar from "./components/Navbar/index";
+import Footer from "./components/Footer/index";
+import Login from "./components/Pages/Login";
 import propertyFilter from "./components/Pages/propertyFilter";
 import searchResults from "./components/Pages/searchResults";
 import startSearch from "./components/Pages/startSearch";
 import Team from "./components/Pages/Team";
 import generateSlug from "generate-slug";
-
 
 import './App.css';
 
