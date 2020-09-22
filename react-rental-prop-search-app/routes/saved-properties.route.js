@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-import PropertySearch from '../models/propertySearch';
+const PropertySearch = require('../models/propertySearch');
 
 router.get('/', (req, res, next) => {
     // get a list of all saved properties
@@ -16,6 +16,7 @@ router.post('/save', (req, res, next) => {
         res.json(doc);
     })
     .catch((err) => {
+        res.status(500).send("Server Error");
         console.log(err);
     })
 });
