@@ -3,6 +3,7 @@ import React from 'react';
 import PropertyCard from '../card/property-card.component.jsx';
 import SearchField from '../search-field/search-field.component.jsx';
 import TestPropertyCard from '../card/test-property-card.component';
+import HeroComponent from '../hero/hero.component.jsx';
 
 import { Container } from 'react-bootstrap';
 
@@ -18,28 +19,34 @@ class Home extends React.Component {
       city: '',
       zipcode: '',
       posts: [],
-      addressCards: []
+      addressCards1: [],
+      addressCards2: []
     }
 
   componentDidMount() {
 
     this.getPropertySearch();
 
-    const breed = 'hound';
+    const breed1 = 'hound';
+    const breed2 = 'boxer';
 
-    const url1 = `https://dog.ceo/api/breed/${breed}/images/random/3`;
+    const url1 = `https://dog.ceo/api/breed/${breed1}/images/random/3`;
+    const url2 = `https://dog.ceo/api/breed/${breed2}/images/random/3`;
 
     Promise.all([
-      fetch(url1)
+      fetch(url1),
+      fetch(url2)
     ])
-    .then(([ res1 ]) => {
+    .then(([ res1, res2 ]) => {
       return Promise.all([
-        res1.json()
+        res1.json(),
+        res2.json()
       ])
     })
-    .then(([ res1 ]) => {
+    .then(([ res1, res2 ]) => {
       this.setState({
-        addressCards: res1.message
+        addressCards1: res1.message,
+        addressCards2: res2.message
       })
     })
   };
@@ -105,7 +112,11 @@ class Home extends React.Component {
   render() {
     console.log('State: ', this.state);
 
-    const addressCards = this.state.addressCards.map((streetAddr, i) => {
+    const addressCardsList1 = this.state.addressCards1.map((streetAddr, i) => {
+      return <TestPropertyCard key={i} streetAddr={streetAddr} />
+    })
+
+    const addressCardsList2 = this.state.addressCards2.map((streetAddr, i) => {
       return <TestPropertyCard key={i} streetAddr={streetAddr} />
     })
 
@@ -114,7 +125,10 @@ class Home extends React.Component {
 
       <Container>
 
-        {addressCards}
+        <HeroComponent />
+
+        {addressCardsList1}
+        {addressCardsList2}
 
         <SearchField zipcode={this.state.zipcode} submitIt={this.submit} handleChange={this.handleChange} />
             <div className="property-search">

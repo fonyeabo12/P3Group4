@@ -19,19 +19,23 @@ function App() {
   const slug = new generateSlug()
   const string = "/start Search"
   const slug1 = slug.toSlug(string);
+
+  const string2 = "/property Filter"
+  const slug2 = slug.toString(string2);
+
   return (
-     <Router>
+    <Router>
       <div>
         <Navbar />
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Contact" component={Contact} />
-           <Route exact path={slug1} component={startSearch} />
+          <Route exact path={slug1} component={startSearch} />
           <Route exact path="/searchResults" component={searchResults} />
-           <Route exact path="/propertyFilter" component={propertyFilter} />
+          <Route exact path={slug2} component={propertyFilter} />
           <Route exact path="/Team" component={Team} />
-           <Route exact path="/Future" component={Future} />
+          <Route exact path="/Future" component={Future} />
         <Footer />
       </div>
     </Router>
