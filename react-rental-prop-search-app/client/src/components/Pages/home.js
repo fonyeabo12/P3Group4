@@ -113,7 +113,15 @@ class Home extends React.Component {
     console.log('State: ', this.state);
 
     const addressCardsList1 = this.state.addressCards1.map((streetAddr, i) => {
-      return <TestPropertyCard key={i} streetAddr={streetAddr} />
+      return (
+      <Container>
+        <Row>
+          <Col xs={6} md={4} className="mx-auto">
+            <TestPropertyCard key={i} streetAddr={streetAddr} />
+          </Col>
+        </Row>
+      </Container>
+      )
     })
 
     const addressCardsList2 = this.state.addressCards2.map((streetAddr, i) => {
@@ -132,12 +140,7 @@ class Home extends React.Component {
               {this.displayPropertySearch(this.state.posts)}
             </div>
 
-        <Row>
-          <Col xs={6} md={5} className="mx-auto my-4">
-            {addressCardsList1}
-          </Col>
-        </Row>
-
+        {addressCardsList1}
         {addressCardsList2}
 
       </Container>
