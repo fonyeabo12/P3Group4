@@ -5,7 +5,7 @@ import SearchField from '../search-field/search-field.component.jsx';
 import TestPropertyCard from '../card/test-property-card.component';
 import HeroComponent from '../hero/hero.component.jsx';
 
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 // import Card from 'react-bootstrap/Card';
 // import Button from 'react-bootstrap/Button';
@@ -127,18 +127,23 @@ class Home extends React.Component {
 
         <HeroComponent />
 
-        {addressCardsList1}
-        {addressCardsList2}
-
         <SearchField zipcode={this.state.zipcode} submitIt={this.submit} handleChange={this.handleChange} />
             <div className="property-search">
               {this.displayPropertySearch(this.state.posts)}
             </div>
+
+        <Row>
+          <Col xs={6} md={5} className="mx-auto my-4">
+            {addressCardsList1}
+          </Col>
+        </Row>
+
+        {addressCardsList2}
+
       </Container>
 
     );
   }
 }
-
 
 export default Home;

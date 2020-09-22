@@ -4,6 +4,9 @@ import {save} from '../../utils/API';
 
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const TestPropertyCard = (props) => {
     
@@ -29,26 +32,29 @@ const TestPropertyCard = (props) => {
 
     };
 
-    
         return (
-    
-            <Card style={{ width: '18rem' }} className="mx-auto my-3">
-                <Card.Img variant="top" src={props.streetAddr} />
-                <Card.Body>
-                    <Card.Title>
-                        <h3>API Fetch Test</h3>
-                    </Card.Title>
-    
-                    <Card.Text>
-                        Will replace with realty mole API
-                    </Card.Text>
-    
-                    <Button variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
-                    <Button variant="danger" className="font-weight-bold">X</Button>{' '}
-    
-                </Card.Body>
-            </Card>
-    
+
+        <Container>
+
+                    <Card style={{ width: '18rem' }} className="mx-auto my-3">
+                        <Card.Img variant="top" src={props.streetAddr} />
+                        <Card.Body>
+                            <Card.Title>
+                                <h3>API Fetch Test</h3>
+                            </Card.Title>
+            
+                            <Card.Text>
+                                Will replace with realty mole API
+                            </Card.Text>
+            
+                            <Button variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
+                            <Button variant="danger" className="font-weight-bold">X</Button>{' '}
+            
+                        </Card.Body>
+                    </Card>
+
+        </Container>
+
         )
 
 };
