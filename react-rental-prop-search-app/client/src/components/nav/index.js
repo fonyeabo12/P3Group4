@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "./style.css";
 import pslogolg from "../../Images/ps-full-logo.png";

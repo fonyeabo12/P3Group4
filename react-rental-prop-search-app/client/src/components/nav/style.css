@@ -7,19 +7,12 @@
 }
 .navbar {
   background: #b3e0e8;
-  position: relative;
+  position: fixed;
   font-family: "Rubik", sans-serif;
 }
 
-.nav-item {
+.nav-link {
   font-size: 20px;
-  color: black;
   text-decoration: none;
   padding-right: 10px;
-}
-
-.nav-item:hover,
-.noUnderline:hover {
-  color: white;
-  text-decoration: none;
 }
