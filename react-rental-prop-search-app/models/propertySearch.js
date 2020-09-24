@@ -9,12 +9,6 @@ const PropertySearchSchema = new Schema({
     rent: Number,
     daysListed: Number
 
-    //street
-    //beds
-    //baths
-    //rent
-    //days listed - calculate days listed
-
 });
 
 // Model

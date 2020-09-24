@@ -1,21 +1,23 @@
 import React from 'react';
 
+import {Container, Form, Button} from 'react-bootstrap';
+
 const SearchField = (props) => (
-    <div>
+    <Container>
     {console.log(props)}
-    <form onSubmit={(event) => props.submitIt(event)}>
-        <div className="form-input">
-            <input 
-                type="text"
-                name="zipcode"
-                placeholder="Enter zipcode"
-                value={props.zipcode}
-                onChange={(event) => props.handleChange(event)}
-            />
-        </div>
-            <button type="submit">Submit</button>
-    </form>
-    </div>
+        <Form onSubmit={(event) => props.submitIt(event)}>
+            <div className="form-input">
+                <input 
+                    type="text"
+                    name="zipcode"
+                    placeholder="Enter zipcode"
+                    value={props.zipcode}
+                    onChange={(event) => props.handleChange(event)}
+                />
+            </div>
+                <Button type="submit">Submit</Button>
+        </Form>
+    </Container>
 
 );
 

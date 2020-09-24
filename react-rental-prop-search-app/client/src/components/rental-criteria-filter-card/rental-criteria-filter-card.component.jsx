@@ -2,66 +2,74 @@ import React from 'react';
 
 import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 
-const RentalCriteriaFilterCard = () => (
+const RentalCriteriaFilterCard = (props) => {
 
-    <div>
+    const { showComponent } = props;
 
-        <Card>
+    return(
 
-        <Card.Header>Rental Criteria</Card.Header>
-        <Card.Body>
-            <Card.Title>Special title treatment</Card.Title>
-            <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
-            </Card.Text>
+        <>{
+            showComponent &&
+            <div>
 
-            <Form>
+                <Card>
 
-                <Form.Group as={Row} controlId="formBasicRange">
-                    <Form.Label column sm="2">
-                        Square Feet
-                    </Form.Label>
-                    <Col sm="10">
-                        <Form.Control type="range" />
-                    </Col>
-                </Form.Group>
+                <Card.Header>Rental Criteria</Card.Header>
+                <Card.Body>
+                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Text>
+                    With supporting text below as a natural lead-in to additional content.
+                    </Card.Text>
 
-                <Form.Group as={Row} controlId="formBasicRange">
-                    <Form.Label column sm="2">
-                        Days Listed
-                    </Form.Label>
-                    <Col sm="10">
-                        <Form.Control type="range" />
-                    </Col>
-                </Form.Group>
+                    <Form>
 
-                <Form.Group as={Row} controlId="formPlaintextMaxRent">
-                    <Form.Label column sm="2">
-                        Max Rent
-                    </Form.Label>
-                    <Col sm="10">
-                    <Form.Control type="text" placeholder="Max" />
-                    </Col>
-                </Form.Group>
+                        <Form.Group as={Row} controlId="formBasicRange">
+                            <Form.Label column sm="12" className="text-left">
+                                Square Feet
+                            </Form.Label>
+                            <Col sm="10">
+                                <Form.Control type="range" />
+                            </Col>
+                        </Form.Group>
 
-                <Form.Group as={Row} controlId="formPlaintextMinRent">
-                    <Form.Label column sm="2">
-                        Min Rent
-                    </Form.Label>
-                    <Col sm="10">
-                    <Form.Control type="text" placeholder="Min" />
-                    </Col>
-                </Form.Group>
+                        <Form.Group as={Row} controlId="formBasicRange">
+                            <Form.Label column sm="12" className="text-left">
+                                Days Listed
+                            </Form.Label>
+                            <Col sm="10">
+                                <Form.Control type="range" />
+                            </Col>
+                        </Form.Group>
 
-            </Form>
+                        <Form.Group as={Row} controlId="formPlaintextMaxRent">
+                            <Form.Label column sm="12" className="text-left">
+                                Max Rent
+                            </Form.Label>
+                            <Col sm="10">
+                            <Form.Control type="text" placeholder="Max" />
+                            </Col>
+                        </Form.Group>
 
-            <Button variant="primary">Apply Filter</Button>
-        </Card.Body>
+                        <Form.Group as={Row} controlId="formPlaintextMinRent">
+                            <Form.Label column sm="12" className="text-left">
+                                Min Rent
+                            </Form.Label>
+                            <Col sm="10">
+                            <Form.Control type="text" placeholder="Min" />
+                            </Col>
+                        </Form.Group>
 
-        </Card>
+                    </Form>
 
-    </div>
+                    <Button variant="primary">Apply Filter</Button>
+                </Card.Body>
 
-);
+                </Card>
+
+            </div>
+        }</>
+    )
+
+} 
 
 export default RentalCriteriaFilterCard;

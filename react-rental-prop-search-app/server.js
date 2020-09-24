@@ -4,7 +4,7 @@ const morgan = require("morgan");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const routes = require('./routes/api');
 const SavedPropertiesRoute = require('./routes/saved-properties.route');

@@ -9,6 +9,8 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/save', (req, res, next) => {
+    // add a new property to saved properties list
+    // display bootstrap toaster message
     console.log(req.body);
     PropertySearch.create(req.body)
     .then((doc) => {
