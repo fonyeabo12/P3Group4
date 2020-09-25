@@ -1,8 +1,9 @@
 footer {
   display: flex;
+  text-align: center;
   font-family: "Rubik", sans-serif;
-
-  min-height: 200px;
+  position: fixed;
+  min-height: 500px;
   background: #b3e0e8;
   position: relative;
   padding-top: 25px;
@@ -25,4 +26,8 @@ img {
   padding-top: 5px;
   padding-bottom: 10px;
   width: 100px;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
 }
