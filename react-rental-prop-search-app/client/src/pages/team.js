@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Container, Card, CardDeck } from "react-bootstrap";
+
+import { Container, Card, CardDeck, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Team extends Component {
   render() {
@@ -38,8 +40,14 @@ class Team extends Component {
           <Card className="my-5 px-1 pb-5 text-center border-0">
             <Card.Img variant="top" src="https://via.placeholder.com/100" />
             <Card.Body>
-              <Card.Title>FirstName LastName</Card.Title>
-              <Card.Text className="text-muted">Position</Card.Text>
+              <Card.Title>Pablo Hernandez</Card.Title>
+              <Card.Text className="text-muted">Front End/Designer</Card.Text>
+              <Button>
+                <FontAwesomeIcon icon={["fab", "github"]} />
+              </Button>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+              </Button>
             </Card.Body>
           </Card>
         </CardDeck>

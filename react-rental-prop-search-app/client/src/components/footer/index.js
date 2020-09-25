@@ -2,8 +2,7 @@ import React from "react";
 import "./style.css";
 import pslogosm from "../../Images/ps-simple-logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import { Col, Row } from "react-bootstrap";
+import { Col, Nav, Row } from "react-bootstrap";
 
 const iconStyle = {
   display: "flex",
@@ -46,9 +45,9 @@ function Footer() {
                   />
                 </li>
               </ul>
-            </Col>
-            <Col md={3} sm={8}>
-              <h5>Meet The Team</h5>
+              <Nav.Link href="/team">
+                <h5>Meet The Team</h5>
+              </Nav.Link>
             </Col>
           </Row>
           {/* Footer Bottom */}
