@@ -19,7 +19,6 @@ import { getProps } from '../utils/API.js';
 class Home extends React.Component {
 
     state = {
-      title: '',
       city: '',
       zipcode: '',
       posts: [],
@@ -28,48 +27,95 @@ class Home extends React.Component {
       savedProperties: [],
       showComponent: 'Filter',
       showFilters1: false, //handleShowFilters set to click event 
-      showFilters2: false //handleShowFilters set to click event 
+      showFilters2: false, //handleShowFilters set to click event 
+
+      // state variables to be passed to property card as props
+      // store response object from fetch in state variables
+      addressLine1: '', // address street from realy mole api
+      bedrooms: '', // number of bedrooms from realty mole api
+      bathrooms: '', // number of bathrooms from realty mole api
+      price: '', // rental price from realty mole api
+      daysOnMarket: '' // days on market (dom) from realty mole api
     };
+
+    fetchData = () => {
+
+      const breed1 = 'hound';
+      const breed2 = 'boxer';
+
+      const url1 = `https://dog.ceo/api/breed/${breed1}/images/random/3`;
+      const url2 = `https://dog.ceo/api/breed/${breed2}/images/random/3`;
+
+      // const realtyMoleAPIKey = 'aa9315e3c9msh7e70db338b431dbp1dae55jsn19c615063e3f';
+      // const citySearch = 'Upper Marlboro';
+      // const stateSearch = 'MD';
+
+      // const addressLine1Search = this.state.addressLine1;
+      // const bedroomsSearch = this.state.bedrooms;
+      // const bathroomsSearch = this.state.bathrooms;
+      // const priceSearch = this.state.price;
+      // const daysOnMarketSearch = this.state.daysOnMarket;
+
+      // const url3 = `https://realty-mole-property-api.p.rapidapi.com/rentalListings?city=${citySearch}&state=${stateSearch}&limit=2&rapidapi-key=${realtyMoleAPIKey}`;
+
+
+      Promise.all([
+        fetch(url1),
+        fetch(url2)
+        // fetch(url3)
+      ])
+      .then(([ 
+        res1, 
+        res2
+        // res3
+      ]) => {
+        return Promise.all([
+          res1.json(),
+          res2.json()
+          // res3.json()
+        ])
+      })
+      .then(([ 
+        res1, 
+        res2 
+        // res3
+      ]) => {
+        this.setState({
+          addressCards1: res1.message,
+          addressCards2: res2.message
+          // addressCards3: res3
+
+        // addressLine1: res3.,
+        // bedrooms: '',
+        // bathrooms: '',
+        // price: '',
+        // daysOnMarket: ''
+        })
+      })
+
+    };
+
 
   componentDidMount() {
 
-    this.getPropertySearch();
+    this.fetchData();
+    // this.getPropertySearch();
 
-    const breed1 = 'hound';
-    const breed2 = 'boxer';
-
-    const url1 = `https://dog.ceo/api/breed/${breed1}/images/random/3`;
-    const url2 = `https://dog.ceo/api/breed/${breed2}/images/random/3`;
-
-    Promise.all([
-      fetch(url1),
-      fetch(url2)
-    ])
-    .then(([ res1, res2 ]) => {
-      return Promise.all([
-        res1.json(),
-        res2.json()
-      ])
-    })
-    .then(([ res1, res2 ]) => {
-      this.setState({
-        addressCards1: res1.message,
-        addressCards2: res2.message
-      })
-    })
   };
 
-  getPropertySearch = () => {
-    axios.get('/api')
-    .then((response) => {
-      const data = response.data;
-      this.setState({ posts: data });
-      console.log('Data has been received!!');
-    })
-    .catch(() => {
-      alert('Error retrieving data');
-    });
-  };
+  // REMOVE THIS CB NO NEED TO SAVE FORM ENTRY
+  // SINCE IT WILL BE CONCATENATED INTO URL FOR HTTP REQUEST TO API
+  // getPropertySearch = () => {
+  //   axios.get('/api')
+  //   .then((response) => {
+  //     const data = response.data;
+  //     this.setState({ posts: data });
+  //     console.log('Data has been received!!');
+  //   })
+  //   .catch(() => {
+  //     alert('Error retrieving data');
+  //   });
+  // };
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -80,7 +126,6 @@ class Home extends React.Component {
     event.preventDefault();
 
     const payload = {
-      title: this.state.title,
       city: this.state.city,
       zipcode: this.state.zipcode,
     };
@@ -93,7 +138,7 @@ class Home extends React.Component {
       .then(() => {
         console.log('Data has been sent to the server');
         this.resetUserInputs();
-        this.getPropertySearch();
+        this.getPropertySearch(); 
       })
       .catch(() => {
         console.log('Internal server error');
@@ -145,6 +190,11 @@ class Home extends React.Component {
     const showFilters1 = this.state.showFilters1;
     const showFilters2 = this.state.showFilters2;
 
+    // const addressCards = this.state.addressCards.map((streetAddr, i) => {
+      // map over response object; pass down props to property card component
+    //   return <AddressCard key={i} streetAddr={streetAddr} />
+    // })
+
     // FUNCTION TO BE CALLED WHEN 'VIEW SAVED PROPERTIES' LINK IS CLICKED
     // getSavedProperties = () => {
     //   getProps()
@@ -164,7 +214,7 @@ class Home extends React.Component {
         <Row>
           <HeroComponent />
         </Row>
-        <Row xs={6} md={4} className="mx-auto">
+        <Row className="d-flex">
           <SearchField zipcode={this.state.zipcode} submitIt={this.submit} handleChange={this.handleChange} />
               <div className="property-search">
                 {this.displayPropertySearch(this.state.posts)}
@@ -172,30 +222,36 @@ class Home extends React.Component {
         </Row>
 
         <Row>
-          {showFilters1 && <RentalCriteriaFilterCard showComponent={this.state.showComponent} />}
-        </Row>
-        <Row>
-          {showFilters2 && <PropertyCriteriaFilterCard showComponent={this.state.showComponent} />}
-        </Row>
-
-        <Row>
-          <Button onClick={() => this.hideComponent('showFilters1')}>
+          <Button className="mx-auto text-muted border-0 shadow p-3 mb-5 bg-white rounded" onClick={() => this.hideComponent('showFilters1')}>
             { this.state.showFilters1 ? 'Hide' : 'Rental Criteria' }
           </Button>
 
-          <Button onClick={() => this.hideComponent('showFilters2')}>
+          <Button className="mx-auto text-muted border-0 shadow p-3 mb-5 bg-white rounded" onClick={() => this.hideComponent('showFilters2')}>
             { this.state.showFilters2 ? 'Hide' : 'Property Criteria Filter' }
           </Button>
         </Row>
 
-        <Row xs={6} md={4} className="mx-auto">
+        <Row>
+          <Col>
+            {showFilters1 && <RentalCriteriaFilterCard showComponent={this.state.showComponent} />}
+          </Col>
+
+          <Col>
+            {showFilters2 && <PropertyCriteriaFilterCard showComponent={this.state.showComponent} />}
+          </Col>
+        </Row>
+
+
+        <Row xs={6} md={4} className="mx-2">
               {addressCardsList1}
         </Row>
-        <Row xs={6} md={4} className="mx-auto">
+        <Row xs={6} md={4} className="mx-2">
             {addressCardsList2}
         </Row>
 
-        <Button onClick={this.getSavedProperties}>View Saved</Button>
+        <Row>
+          <Button className="m-5 text-muted border-0 shadow p-3 bg-white rounded" onClick={this.getSavedProperties}>View Saved</Button>
+        </Row>
 
       </Container>
 

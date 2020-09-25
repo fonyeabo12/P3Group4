@@ -6,7 +6,7 @@ import Profile from "../../pages/profile";
 import Team from "../../pages/team";
 import SignIn from "../../pages/signin";
 import Results from "../../pages/Results";
-import Filter from "../../pages/propertyFilter";
+// import Filter from "../../pages/propertyFilter";
 import NotFound from "../../pages/NotFound";
 
 export default function Routes() {
@@ -30,9 +30,9 @@ export default function Routes() {
       <Route path="/results">
         <Results />
       </Route>
-      <Route path="/filter">
+      {/* <Route path="/filter">
         <Filter />
-      </Route>
+      </Route> */}
       <Route>
         <NotFound />
       </Route>

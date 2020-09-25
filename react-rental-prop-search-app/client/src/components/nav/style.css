@@ -9,6 +9,9 @@
   background: #b3e0e8;
   position: fixed;
   font-family: "Rubik", sans-serif;
+  
+  /* make navbar full width */
+  /* width: 100vw !important;  */
 }
 
 .nav-link {

@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan('tiny'));
 
 // tells app to handle each endpoint based on the associated file
-// app.use('/api', routes);
+app.use('/api', routes);
 app.use('/properties', SavedPropertiesRoute);
 
 

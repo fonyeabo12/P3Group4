@@ -12,7 +12,7 @@ const RentalCriteriaFilterCard = (props) => {
             showComponent &&
             <div>
 
-                <Card>
+                <Card xs={4} md={4} className="m-3 text-muted border-0 shadow p-3 bg-white rounded">
 
                 <Card.Header>Rental Criteria</Card.Header>
                 <Card.Body>

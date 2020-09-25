@@ -13,7 +13,7 @@ const PropertyCriteriaFilterCard = (props) => {
 
             <div>
 
-                <Card>
+                <Card xs={6} md={4} className="m-3 text-muted border-0 shadow p-3 bg-white rounded">
 
                 <Card.Header>Property Criteria</Card.Header>
                 <Card.Body>

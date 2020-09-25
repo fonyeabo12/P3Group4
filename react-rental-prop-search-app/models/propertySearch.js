@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 // Schema
 const Schema = mongoose.Schema;
 const PropertySearchSchema = new Schema({
-    street: String,
-    beds: Number,
-    baths: Number,
-    rent: Number,
-    daysListed: Number
+    zipcode: String,
+
+    addressLine1: String,
+    bedrooms: Number,
+    bathrooms: Number,
+    price: Number,
+    daysOnMarket: Number
 
 });
 
