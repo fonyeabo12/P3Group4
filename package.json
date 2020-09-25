@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "mern",
+=======
+  "name": "property-search",
+>>>>>>> 2e5c75aac80cf87447353f31595fdf77564ea776
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,10 +12,15 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
+<<<<<<< HEAD
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
+=======
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
+>>>>>>> 2e5c75aac80cf87447353f31595fdf77564ea776
   },
   "author": "",
   "license": "ISC",
@@ -21,8 +30,19 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+<<<<<<< HEAD
     "express": "^4.16.3",
     "mongoose": "^5.3.16",
     "if-env": "^1.0.4"
+=======
+    "bootstrap": "^4.5.2",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16",
+    "react-bootstrap": "^1.3.0",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3"
+>>>>>>> 2e5c75aac80cf87447353f31595fdf77564ea776
   }
 }
