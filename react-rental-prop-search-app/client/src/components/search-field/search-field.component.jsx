@@ -17,10 +17,17 @@ const SearchField = (props) => (
                             onChange={(event) => props.handleChange(event)}
                             className="border-top-0 border-left-0 border-right-0 border-bottom m-3"
                         />
+                        <input 
+                            type="text"
+                            name="city"
+                            placeholder="Enter city"
+                            value={props.city}
+                            onChange={(event) => props.handleChange(event)}
+                            className="border-top-0 border-left-0 border-right-0 border-bottom m-3"
+                        />
                     </div>
+                    <Button variant="secondary" className="m-3 p-3 text-white border-0 shadow rounded" type="submit">Submit</Button>{' '}
                 </Form>
-
-                <Button variant="secondary" className="m-3 p-3 text-white border-0 shadow rounded" type="submit">Submit</Button>{' '}
 
         </Row>
     </Container>

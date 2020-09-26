@@ -1,0 +1,18 @@
+button {
+  background-color: teal;
+}
+.avatar {
+  width: 210px;
+  height: auto;
+  padding: 0;
+  -webkit-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+  box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+}
+.name {
+  font-weight: bold;
+  color: black;
+}
+.title {
+  color: slategray;
+}

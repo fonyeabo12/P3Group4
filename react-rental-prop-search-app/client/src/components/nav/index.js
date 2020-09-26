@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import "./style.css";
 import pslogolg from "../../Images/ps-full-logo.png";
 
 class Navigation extends Component {
   render() {
     return (
-      <Container>
         <Navbar expand="lg">
           <Navbar.Brand href="/">
             <img
@@ -26,7 +25,6 @@ class Navigation extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </Container>
     );
   }
 }

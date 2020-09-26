@@ -10,7 +10,7 @@ const PropertyCard = (props) => (
             <Card.Img variant="top" src={carinterior} />
             <Card.Body>
                 <Card.Title>
-                    <h3>{props.post.title}</h3>
+                    <h3>Property: {props.post.title}</h3>
                 </Card.Title>
 
                 <Card.Text>
