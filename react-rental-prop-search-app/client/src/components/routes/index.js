@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../../pages/Home";
-import About from "../../pages/About";
-import Profile from "../../pages/Profile";
-import Team from "../../pages/Team";
-import SignIn from "../../pages/SignIn";
+import Home from "../../pages/home";
+import About from "../../pages/about";
+import Profile from "../../pages/profile";
+import Team from "../../pages/team";
+import SignIn from "../../pages/signin";
 import Results from "../../pages/Results";
+// import Filter from "../../pages/propertyFilter";
 import NotFound from "../../pages/NotFound";
 
 export default function Routes() {
@@ -29,6 +30,9 @@ export default function Routes() {
       <Route path="/results">
         <Results />
       </Route>
+      {/* <Route path="/filter">
+        <Filter />
+      </Route> */}
       <Route>
         <NotFound />
       </Route>
