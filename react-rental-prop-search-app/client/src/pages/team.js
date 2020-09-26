@@ -21,18 +21,19 @@ class Team extends Component {
             </p>
           </Card.Body>
 
+          {/* Brandon Jenkins */}
           <Col className="my-5 px-1 pb-5 text-center border-0">
             <Image className="avatar" src={brandon} />
             <Card.Body>
               <h5 className="name">Brandon Jenkins</h5>
               <h6 className="title">Title</h6>
-              <a
-                className="github-btn"
-                type="button"
-                href="https://github.com/BrandonEJenkins"
-              >
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
+              {/* Github Button */}
+              <span className="github-btn" type="button">
+                <a href="https://github.com/BrandonEJenkins" target="blank">
+                  <FontAwesomeIcon icon={["fab", "github"]} />
+                </a>
+              </span>
+              {/* Linkedin Button */}
               <span className="linkedin-btn" type="button">
                 <a
                   href="https://www.linkedin.com/in/brandon-e-jenkins/"
@@ -41,25 +42,28 @@ class Team extends Component {
                   <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
                 </a>
               </span>
+              {/* Email Button */}
               <span className="email-btn" type="button">
-                <a href="mailto: pablohdzjr@gmail.com">
+                <a href="#">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
                 </a>
               </span>
             </Card.Body>
           </Col>
+
+          {/* Nicholas Foreman */}
           <Col className="my-5 px-1 pb-5 text-center border-0">
             <Image className="avatar" src={nick} />
             <Card.Body>
               <h5 className="name">Nicholas Foreman</h5>
               <h6 className="title">Title</h6>
-              <a
-                className="github-btn"
-                type="button"
-                href="https://github.com/nickforeman4"
-              >
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
+              {/* Github Button */}
+              <span className="github-btn" type="button">
+                <a href="https://github.com/nickforeman4" target="blank">
+                  <FontAwesomeIcon icon={["fab", "github"]} />
+                </a>
+              </span>
+              {/* Linkedin Button  */}
               <span className="linkedin-btn" type="button">
                 <a
                   href="https://www.linkedin.com/in/nickforeman/"
@@ -68,25 +72,28 @@ class Team extends Component {
                   <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
                 </a>
               </span>
+              {/* Email Button */}
               <span className="email-btn" type="button">
-                <a href="mailto: pablohdzjr@gmail.com">
+                <a href="mailto: nicholas.m.foreman@gmail.com">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
                 </a>
               </span>
             </Card.Body>
           </Col>
+
+          {/* Chidi Onyeabo */}
           <Col className="my-5 px-1 pb-5 text-center border-0">
             <Image className="avatar" src={chidi} />
             <Card.Body>
               <h5 className="name">Chidi Onyeabo</h5>
               <h6 className="title">Title</h6>
-              <a
-                className="github-btn"
-                type="button"
-                href="https://github.com/fonyeabo12"
-              >
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
+              {/* Github Button */}
+              <span className="github-btn" type="button">
+                <a href="https://github.com/fonyeabo12" target="blank">
+                  <FontAwesomeIcon icon={["fab", "github"]} />
+                </a>
+              </span>
+              {/* Linkedin Button */}
               <span className="linkedin-btn" type="button">
                 <a
                   href="https://www.linkedin.com/in/franklin-onyeabo/"
@@ -95,25 +102,28 @@ class Team extends Component {
                   <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
                 </a>
               </span>
+              {/* Email Button */}
               <span className="email-btn" type="button">
-                <a href="mailto: pablohdzjr@gmail.com">
+                <a href="#">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
                 </a>
               </span>
             </Card.Body>
           </Col>
+
+          {/* Pablo Hernandez */}
           <Col className="my-5 px-1 pb-5 text-center border-0">
             <Image className="avatar" src={pablo} />
             <Card.Body>
               <h5 className="name">Pablo Hernandez</h5>
               <h6 className="title">Front End/Designer</h6>
-              <a
-                className="github-btn"
-                type="button"
-                href="https://github.com/medszilla26"
-              >
-                <FontAwesomeIcon icon={["fab", "github"]} />
-              </a>
+              {/* Github Button */}
+              <span className="github-btn" type="button">
+                <a href="https://github.com/medszilla26" target="blank">
+                  <FontAwesomeIcon icon={["fab", "github"]} />
+                </a>
+              </span>
+              {/* Linkedin Button */}
               <span className="linkedin-btn" type="button">
                 <a
                   href="https://www.linkedin.com/in/pablohdzjr/"
@@ -122,6 +132,7 @@ class Team extends Component {
                   <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
                 </a>
               </span>
+              {/* Email Button */}
               <span className="email-btn" type="button">
                 <a href="mailto: pablohdzjr@gmail.com">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
