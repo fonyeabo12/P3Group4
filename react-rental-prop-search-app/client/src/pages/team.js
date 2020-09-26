@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-
-import { Container, Card, CardDeck, Button } from "react-bootstrap";
+import "./style.css";
+import pablo from "../../src/Images/pablo.JPG";
+import brandon from "../../src/Images/brandon.png";
+import nick from "../../src/Images/nick.jpg";
+import { Container, Card, CardDeck, Button, Col, Image } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Team extends Component {
@@ -16,40 +19,59 @@ class Team extends Component {
               nostrud aliquip sint ullamco incididunt voluptate ad ipsum.
             </p>
           </Card.Body>
-          <Card className="my-5 px-1 pb-5 text-center border-0">
-            <Card.Img variant="top" src="https://via.placeholder.com/100" />
+
+          <Col className="my-5 px-1 pb-5 text-center border-0">
+            <Image className="avatar" src={brandon} />
             <Card.Body>
-              <Card.Title>FirstName LastName</Card.Title>
-              <Card.Text className="text-muted">Position</Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="my-5 px-1 pb-5 text-center border-0">
-            <Card.Img variant="top" src="https://via.placeholder.com/100" />
-            <Card.Body>
-              <Card.Title>FirstName LastName</Card.Title>
-              <Card.Text className="text-muted">Position</Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="my-5 px-1 pb-5 text-center border-0">
-            <Card.Img variant="top" src="https://via.placeholder.com/100" />
-            <Card.Body>
-              <Card.Title>FirstName LastName</Card.Title>
-              <Card.Text className="text-muted">Position</Card.Text>
-            </Card.Body>
-          </Card>
-          <Card className="my-5 px-1 pb-5 text-center border-0">
-            <Card.Img variant="top" src="https://via.placeholder.com/100" />
-            <Card.Body>
-              <Card.Title>Pablo Hernandez</Card.Title>
-              <Card.Text className="text-muted">Front End/Designer</Card.Text>
-              <Button>
+              <h5 className="name">Brandon Jenkins</h5>
+              <h6 className="title">Front End/Designer</h6>
+              <Button className="mx-1 mb-0">
                 <FontAwesomeIcon icon={["fab", "github"]} />
               </Button>
               <Button className="mx-1 mb-0">
                 <FontAwesomeIcon icon={["fab", "linkedin"]} />
               </Button>
             </Card.Body>
-          </Card>
+          </Col>
+          <Col className="my-5 px-1 pb-5 text-center border-0">
+            <Image className="avatar" src={nick} />
+            <Card.Body>
+              <h5 className="name">Nicholas Foreman</h5>
+              <h6 className="title">Front End/Designer</h6>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "github"]} />
+              </Button>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+              </Button>
+            </Card.Body>
+          </Col>
+          <Col className="my-5 px-1 pb-5 text-center border-0">
+            <Image className="avatar" src={pablo} />
+            <Card.Body>
+              <h5 className="name">Pablo Hernandez</h5>
+              <h6 className="title">Front End/Designer</h6>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "github"]} />
+              </Button>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+              </Button>
+            </Card.Body>
+          </Col>
+          <Col className="my-5 px-1 pb-5 text-center border-0">
+            <Image className="avatar" src={pablo} />
+            <Card.Body>
+              <h5 className="name">Pablo Hernandez</h5>
+              <h6 className="title">Front End/Designer</h6>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "github"]} />
+              </Button>
+              <Button className="mx-1 mb-0">
+                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+              </Button>
+            </Card.Body>
+          </Col>
         </CardDeck>
       </Container>
     );

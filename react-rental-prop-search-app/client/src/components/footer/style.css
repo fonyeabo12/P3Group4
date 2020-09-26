@@ -6,8 +6,7 @@ footer {
   min-height: 300px;
   background: #b3e0e8;
   position: relative;
-  padding-top: 25px;
-  padding-bottom: 40px;
+  padding: 60px 30px 40px;
   color: #36a0b5;
 }
 .footer-bottom {
