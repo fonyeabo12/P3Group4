@@ -1,5 +1,5 @@
 const express = require("express");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const morgan = require("morgan");
 const path = require("path");
 
@@ -8,15 +8,15 @@ const PORT = process.env.PORT || 3001;
 
 const routes = require('./routes/api-routes');
 
-// mongoose.connect("mongodb://localhost/react_prop_search", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
+mongoose.connect("mongodb://localhost/react_prop_search", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 // mongoose listener to verify that mongoose been connected
-// mongoose.connection.on("connected", () => {
-//   console.log("Mongoose is connected!!!");
-// });
+mongoose.connection.on("connected", () => {
+    console.log("Mongoose is connected!!!");
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

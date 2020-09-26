@@ -7,47 +7,6 @@ const PropertySearch = require('../models/propertySearch');
 // Routes
 // GET
 
-router.post('/save', (req, res) => {
-
-    const data = req.body;
-
-    const newPropertySearch = new PropertySearch(data);
-
-    newPropertySearch.save((error) => {
-        if (error) {
-            res.status(500).json({ msg:'Sorry, internal sever errors' });
-            return;
-        } 
-        // PropertySearch
-        return res.json({
-            msg: 'Your data has been saved!!!'
-        });
-    });
-});
-
-
-
-router.get('/', (req, res) => {
-
-    PropertySearch.find({  })
-        .then((data) => {
-            console.log('Data: ', data);
-            res.json(data);
-        })
-        .catch((error) => {
-            console.log('error: ', error);
-        });
-
-});
-
-router.get('/name', (req, res) => {
-    const data = {
-        username: 'williams',
-        age: 26
-    };
-    res.json(data);
-});
-
 // COPIED DATA:
 // from saved-properties.route.js
 router.post('/properties/save', (req, res, next) => {
@@ -65,11 +24,11 @@ router.post('/properties/save', (req, res, next) => {
     })
 });
 
-router.get('/properties/', (req, res, next) => {
+router.get('/properties', (req, res, next) => {
     // get a list of all saved properties
-    console.log(req.query);
+    console.log();
     // res.send('getting a list of all saved properties')
-    PropertySearch.findAll(req.query)
+    PropertySearch.find()
         .then((doc) => {
             console.log(doc);
             res.json(doc);
