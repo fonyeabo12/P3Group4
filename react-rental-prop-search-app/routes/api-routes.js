@@ -26,12 +26,12 @@ router.post('/properties/save', (req, res, next) => {
 
 router.get('/properties', (req, res, next) => {
     // get a list of all saved properties
-    console.log();
+    console.log('Get route test!!');
     // res.send('getting a list of all saved properties')
     PropertySearch.find()
         .then((doc) => {
             console.log(doc);
-            res.json(doc);
+            res.send(doc);
         })
         .catch((err) => {
             res.status(500).send("Server Error");

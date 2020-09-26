@@ -74,8 +74,8 @@ const TestPropertyCard = (props) => {
                             </Col>
                         </Row>
                         <Row className="">
-                            <Button className="align-bottom p-3" variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
-                            <Button className="align-bottom p-3" variant="danger" className="font-weight-bold">X</Button>{' '}
+                            <Button className="align-bottom mx-2 p-3" variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
+                            <Button className="align-bottom mx-2 p-3" variant="danger" className="font-weight-bold">X</Button>{' '}
                         </Row>
 
                 </Card.Body>
