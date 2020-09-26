@@ -9,7 +9,11 @@ const PropertySearchSchema = new Schema({
     bedrooms: Number,
     bathrooms: Number,
     price: Number,
-    daysOnMarket: Number
+    daysOnMarket: Number,
+    
+    averageRent: Number,
+    minRent: Number,
+    maxRent: Number
 
 });
 

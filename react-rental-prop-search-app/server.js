@@ -6,8 +6,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const routes = require('./routes/api');
-const SavedPropertiesRoute = require('./routes/saved-properties.route');
+const routes = require('./routes/api-routes');
 
 // mongoose.connect("mongodb://localhost/react_prop_search", {
 //   useNewUrlParser: true,
@@ -27,7 +26,6 @@ app.use(morgan('tiny'));
 
 // tells app to handle each endpoint based on the associated file
 app.use('/api', routes);
-app.use('/properties', SavedPropertiesRoute);
-
+// app.use('/properties', SavedPropertiesRoute);
 
 app.listen(PORT, console.log(`Server is listening at ${PORT}`));

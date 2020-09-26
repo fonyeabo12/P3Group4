@@ -5,7 +5,6 @@ import pslogosm from "../../Images/ps-simple-logo.png";
 import { Col, Container, Row } from "react-bootstrap";
 function Footer() {
   return (
-    <Container>
       <footer>
         <Row className="middle">
           <Col md={3} sm={8}>
@@ -40,7 +39,6 @@ function Footer() {
           </p>
         </div>
       </footer>
-    </Container>
   );
 }
 export default Footer;

@@ -1,18 +1,14 @@
 import axios from 'axios';
 
-    function save(data) {
-        return axios.post('/properties/save', data);
-    }
-
     function getProps() {
-        return axios.get('/properties');
+        return axios.get('/api/properties');
     }
 
     function deleteProp(id) {
-        return axios.delete('/properties' + id);
+        return axios.delete('/api/properties' + id);
     }
 
-    export {save, getProps, deleteProp};
+    export {getProps, deleteProp};
 
 
 /*

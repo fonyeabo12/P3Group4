@@ -35,29 +35,45 @@ class Home extends React.Component {
       bedrooms: '', // number of bedrooms from realty mole api
       bathrooms: '', // number of bathrooms from realty mole api
       price: '', // rental price from realty mole api
-      daysOnMarket: '' // days on market (dom) from realty mole api
+      daysOnMarket: '', // days on market (dom) from realty mole api
+      
+      averageRent: '', // avg rent from second realty mole Zip Code Rental Data endpoint
+      minRent: '', // min rent from second realty mole Zip Code Rental Data endpoint
+      maxRent: ''// max rent from second realty mole Zip Code Rental Data endpoint
     };
 
-    fetchData = () => {
+    fetchData = (inputFormValues = {}) => {
 
-      const breed1 = 'hound';
-      const breed2 = 'boxer';
+      console.log(inputFormValues);
+      
+      const zipcode = inputFormValues.zipcode ? inputFormValues.zipcode : undefined;
+      const city = inputFormValues.city ? inputFormValues.city : undefined;
 
-      const url1 = `https://dog.ceo/api/breed/${breed1}/images/random/3`;
-      const url2 = `https://dog.ceo/api/breed/${breed2}/images/random/3`;
+      console.log(zipcode, city);
 
-      // const realtyMoleAPIKey = 'aa9315e3c9msh7e70db338b431dbp1dae55jsn19c615063e3f';
-      // const citySearch = 'Upper Marlboro';
+      // const breed1 = 'hound';
+      const breed1 = 'husky';
+      const breed2 = 'shiba';
+
+      // const url1 = `https://dog.ceo/api/breed/${breed1}/images/random/3`;
+      // const url2 = `https://dog.ceo/api/breed/${breed2}/images/random/3`;
+
+      const realtyMoleAPIKey = 'aa9315e3c9msh7e70db338b431dbp1dae55jsn19c615063e3f';
+
       // const stateSearch = 'MD';
 
-      // const addressLine1Search = this.state.addressLine1;
-      // const bedroomsSearch = this.state.bedrooms;
-      // const bathroomsSearch = this.state.bathrooms;
-      // const priceSearch = this.state.price;
-      // const daysOnMarketSearch = this.state.daysOnMarket;
+      const addressLine1Search = this.state.addressLine1;
+      const bedroomsSearch = this.state.bedrooms;
+      const bathroomsSearch = this.state.bathrooms;
+      const priceSearch = this.state.price;
+      const daysOnMarketSearch = this.state.daysOnMarket;
 
-      // const url3 = `https://realty-mole-property-api.p.rapidapi.com/rentalListings?city=${citySearch}&state=${stateSearch}&limit=2&rapidapi-key=${realtyMoleAPIKey}`;
+      const averageRent = this.state.averageRent;
+      const minRent = this.state.minRent;
+      const maxRent = this.state.maxRent;
 
+      const url1 = `https://realty-mole-property-api.p.rapidapi.com/rentalListings?city=${city}&limit=6&rapidapi-key=${realtyMoleAPIKey}`;
+      const url2 = `https://realty-mole-property-api.p.rapidapi.com/zipCodes/${zipcode}?&limit=1&rapidapi-key=${realtyMoleAPIKey}`;
 
       Promise.all([
         fetch(url1),
@@ -77,31 +93,34 @@ class Home extends React.Component {
       })
       .then(([ 
         res1, 
-        res2 
+        res2
         // res3
       ]) => {
         this.setState({
-          addressCards1: res1.message,
-          addressCards2: res2.message
-          // addressCards3: res3
+          addressCards1: res1,
+          addressCards2: res2.rentalData.detailed,
+          // addressCards3: res3,
 
         // addressLine1: res3.,
-        // bedrooms: '',
-        // bathrooms: '',
-        // price: '',
-        // daysOnMarket: ''
+        bedrooms: '',
+        bathrooms: '',
+        price: '',
+        daysOnMarket: ''
         })
       })
 
+
     };
 
+    // on apply filter save filtering options to the state var
+    // upon submit check to see whether there are filtering options in state
 
-  componentDidMount() {
+  // componentDidMount() {
 
-    this.fetchData();
-    // this.getPropertySearch();
+  //   this.fetchData();
+  //   // this.getPropertySearch();
 
-  };
+  // };
 
   // REMOVE THIS CB NO NEED TO SAVE FORM ENTRY
   // SINCE IT WILL BE CONCATENATED INTO URL FOR HTTP REQUEST TO API
@@ -123,26 +142,33 @@ class Home extends React.Component {
   };
 
   submit = (event) => {
+    // grab values of city and or zipcode state variable forms
+    // declare variable to store input values
+    // concatenate variable in http request url string
+
+    console.log('submit button clicked');
     event.preventDefault();
 
-    const payload = {
+    const inputFormValues = {
       city: this.state.city,
       zipcode: this.state.zipcode,
     };
 
-    axios({
-      url: '/api/save',
-      method: 'POST',
-      data: payload
-    })
-      .then(() => {
-        console.log('Data has been sent to the server');
-        this.resetUserInputs();
-        this.getPropertySearch(); 
-      })
-      .catch(() => {
-        console.log('Internal server error');
-      });
+    this.fetchData(inputFormValues);
+    this.resetUserInputs();
+    // axios({
+    //   url: '/api/save',
+    //   method: 'POST',
+    //   data: payload
+    // })
+    //   .then(() => {
+    //     console.log('Data has been sent to the server');
+    //     this.resetUserInputs();
+    //     this.getPropertySearch(); 
+    //   })
+    //   .catch(() => {
+    //     console.log('Internal server error');
+    //   });
   };
 
   resetUserInputs = () => {
@@ -153,14 +179,23 @@ class Home extends React.Component {
     });
   };
 
-  displayPropertySearch = (posts) => {
-    if (!posts.length) return null;
-    return posts.map((post, index) => (
-      <div key={index} className="property-search-display">
-        <PropertyCard post={ post } />
-      </div>
-    ));
-  };
+  // displayPropertySearch = (posts) => {
+  //   if (!posts.length) return null;
+  //   return posts.map((post, index) => (
+  //     <div key={index} className="property-search-display">
+  //       <TestPropertyCard post={ post } />
+  //       {/* <PropertyCard post={ post } /> */}
+  //     </div>
+  //   ));
+  // };
+
+  handleGetSavedProperties = () => {
+    // handler for firing the GET request to the '/properties/' route
+    // handler should get all saved properties when the 'view saved' button is clicked
+    // callback should call getProps() method from API.js util
+    // print message to the console saying all properties retrieved
+    // HELP: NEED TO FIGURE OUT HOW TO PROPERLY SET UP GET IN 'saved-properties.route.js' file
+  }
 
   hideComponent = (showComponent) => {
     console.log(showComponent);
@@ -179,13 +214,27 @@ class Home extends React.Component {
   render() {
     console.log('State: ', this.state);
 
-    const addressCardsList1 = this.state.addressCards1.map((streetAddr, i) => {
-      return <TestPropertyCard key={i} streetAddr={streetAddr} />
-    })
+    //   if(this.state.addressCards1 && this.state.addressCards2) {
+    //   const addressCardsList1 = this.state.addressCards1.map((streetAddr, i) => {
+    //     return (
+    //       <TestPropertyCard 
+    //         key={i} 
+    //         streetAddr={streetAddr} 
+    //       />
+    //     ) 
+    //   })
 
-    const addressCardsList2 = this.state.addressCards2.map((streetAddr, i) => {
-      return <TestPropertyCard key={i} streetAddr={streetAddr} />
-    })
+    //   const addressCardsList2 = this.state.addressCards2.map((streetAddr, i) => {
+    //     return (
+    //       <TestPropertyCard 
+    //         key={i} 
+    //         streetAddr={streetAddr} 
+    //       />
+    //     )
+    //   })
+    // } else {
+    //   return( <h2>Enter Zipcode and City</h2> );
+    // }
 
     const showFilters1 = this.state.showFilters1;
     const showFilters2 = this.state.showFilters2;
@@ -215,10 +264,13 @@ class Home extends React.Component {
           <HeroComponent />
         </Row>
         <Row className="d-flex">
-          <SearchField zipcode={this.state.zipcode} submitIt={this.submit} handleChange={this.handleChange} />
-              <div className="property-search">
-                {this.displayPropertySearch(this.state.posts)}
-              </div>
+          <SearchField 
+            city={this.state.city} 
+            zipcode={this.state.zipcode} 
+            submitIt={this.submit} 
+            handleChange={this.handleChange} 
+            fetchData={this.fetchData}
+          />
         </Row>
 
         <Row>
@@ -241,12 +293,34 @@ class Home extends React.Component {
           </Col>
         </Row>
 
-
         <Row xs={6} md={4} className="mx-2">
-              {addressCardsList1}
+
+          {this.state.addressCards1.length ? this.state.addressCards1.map((streetAddr, i) => {
+            return (
+              <TestPropertyCard 
+                key={i} 
+                streetAddr={streetAddr} 
+              />
+            ) 
+          })
+        :  <h2>Enter Zipcode and City</h2> }
+
+              {/* {addressCardsList1} */}
         </Row>
         <Row xs={6} md={4} className="mx-2">
-            {addressCardsList2}
+
+          <ul>
+            {this.state.addressCards2.length ? this.state.addressCards2.map((streetAddr, i) => {
+            return (
+
+            <li key={i}>
+              {streetAddr.averageRent}
+              {streetAddr.minRent}
+            </li>
+
+            )})
+          :  null }
+          </ul> 
         </Row>
 
         <Row>
