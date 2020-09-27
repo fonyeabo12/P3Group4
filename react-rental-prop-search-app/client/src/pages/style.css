@@ -63,3 +63,10 @@ a:hover {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.notfound {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 100px;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+}

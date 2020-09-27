@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../../pages/Home";
-import About from "../../pages/About";
-import Profile from "../../pages/Profile";
-import Team from "../../pages/Team";
-import SignIn from "../../pages/SignIn";
-import Results from "../../pages/Results";
-import NotFound from "../../pages/NotFound";
-import Landing from "../../pages/Landing";
+import Home from "../../pages/home";
+import About from "../../pages/about";
+import Profile from "../../pages/profile";
+import Team from "../../pages/team";
+import SignIn from "../../pages/signin";
+
+import NotFound from "../../pages/notfound";
+import Landing from "../../pages/landing";
 
 export default function Routes() {
   return (
@@ -26,9 +26,6 @@ export default function Routes() {
       </Route>
       <Route path="/signin">
         <SignIn />
-      </Route>
-      <Route path="/results">
-        <Results />
       </Route>
       <Route path="/landing">
         <Landing />
