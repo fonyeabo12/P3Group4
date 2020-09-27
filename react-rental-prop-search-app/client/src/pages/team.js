@@ -11,22 +11,14 @@ class Team extends Component {
   render() {
     return (
       <Container>
+        <div className="heading">Meet the Team</div>
         <CardDeck>
-          <Card.Body>
-            <h2>Meet The Team</h2>
-            <p>
-              Occaecat nisi deserunt aute cupidatat ad Lorem ex Lorem
-              reprehenderit velit magna occaecat ullamco. Enim elit deserunt non
-              nostrud aliquip sint ullamco incididunt voluptate ad ipsum.
-            </p>
-          </Card.Body>
-
           {/* Brandon Jenkins */}
           <Col className="my-5 px-1 pb-5 text-center border-0">
             <Image className="avatar" src={brandon} />
             <Card.Body>
               <h5 className="name">Brandon Jenkins</h5>
-              <h6 className="title">Title</h6>
+              <h6 className="title">Back End</h6>
               {/* Github Button */}
               <span className="github-btn" type="button">
                 <a href="https://github.com/BrandonEJenkins" target="blank">
@@ -44,7 +36,7 @@ class Team extends Component {
               </span>
               {/* Email Button */}
               <span className="email-btn" type="button">
-                <a href="#">
+                <a href="">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
                 </a>
               </span>
@@ -56,7 +48,7 @@ class Team extends Component {
             <Image className="avatar" src={nick} />
             <Card.Body>
               <h5 className="name">Nicholas Foreman</h5>
-              <h6 className="title">Title</h6>
+              <h6 className="title">Back End</h6>
               {/* Github Button */}
               <span className="github-btn" type="button">
                 <a href="https://github.com/nickforeman4" target="blank">
@@ -86,7 +78,7 @@ class Team extends Component {
             <Image className="avatar" src={chidi} />
             <Card.Body>
               <h5 className="name">Chidi Onyeabo</h5>
-              <h6 className="title">Title</h6>
+              <h6 className="title">Front End</h6>
               {/* Github Button */}
               <span className="github-btn" type="button">
                 <a href="https://github.com/fonyeabo12" target="blank">
@@ -104,7 +96,7 @@ class Team extends Component {
               </span>
               {/* Email Button */}
               <span className="email-btn" type="button">
-                <a href="#">
+                <a href="">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
                 </a>
               </span>
