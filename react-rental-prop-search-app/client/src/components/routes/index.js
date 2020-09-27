@@ -5,10 +5,8 @@ import About from "../../pages/about";
 import Profile from "../../pages/profile";
 import Team from "../../pages/team";
 import SignIn from "../../pages/signin";
-import Results from "../../pages/Results";
-// import Filter from "../../pages/propertyFilter";
-import NotFound from "../../pages/NotFound";
-import Landing from "../../pages/Landing";
+import NotFound from "../../pages/notfound";
+import Landing from "../../pages/landing";
 
 export default function Routes() {
   return (
@@ -27,9 +25,6 @@ export default function Routes() {
       </Route>
       <Route path="/signin">
         <SignIn />
-      </Route>
-      <Route path="/results">
-        <Results />
       </Route>
       <Route path="/landing">
         <Landing />
