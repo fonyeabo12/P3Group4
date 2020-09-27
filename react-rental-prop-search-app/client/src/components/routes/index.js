@@ -5,7 +5,6 @@ import About from "../../pages/about";
 import Profile from "../../pages/profile";
 import Team from "../../pages/team";
 import SignIn from "../../pages/signin";
-
 import NotFound from "../../pages/notfound";
 import Landing from "../../pages/landing";
 

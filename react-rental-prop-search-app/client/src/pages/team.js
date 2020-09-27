@@ -4,8 +4,8 @@ import brandon from "../Images/brandon.png";
 import nick from "../Images/nick.jpg";
 import chidi from "../Images/chidi.jpeg";
 import { Container, Card, CardDeck, Col, Image } from "react-bootstrap";
-import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../index.css";
 
 class Team extends Component {
   render() {
