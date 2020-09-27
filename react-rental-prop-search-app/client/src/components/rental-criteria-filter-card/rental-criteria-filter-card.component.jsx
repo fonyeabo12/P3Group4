@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../rental-criteria-filter-card/styles.css';
+
 import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 
 const RentalCriteriaFilterCard = (props) => {
@@ -61,7 +63,7 @@ const RentalCriteriaFilterCard = (props) => {
 
                     </Form>
 
-                    <Button variant="primary">Apply Filter</Button>
+                    <Button className="rentalCriteriaFilterBtn m-3 p-3 align-left" variant="primary">Apply Filter</Button>
                 </Card.Body>
 
                 </Card>

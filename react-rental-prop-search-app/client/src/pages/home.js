@@ -210,10 +210,10 @@ class Home extends React.Component {
         </Row>
 
         <Row xs={6} md={4} className="mx-2">
-          <ul>
+          <ul className="list-group list-group-horizontal">
             {this.state.addressCards2.length ? this.state.addressCards2.map((streetAddr, i) => {
             return (
-              <li key={i}>
+              <li className="list-group-item" key={i}>
                 {streetAddr.averageRent}
                 {streetAddr.minRent}
               </li>
