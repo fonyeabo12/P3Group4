@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../../pages/home";
+import Search from "../../pages/search";
 import About from "../../pages/about";
 import Profile from "../../pages/profile";
 import Team from "../../pages/team";
@@ -12,7 +12,10 @@ export default function Routes() {
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        <Welcome />
+      </Route>
+      <Route path="/search">
+        <Search />
       </Route>
       <Route path="/about">
         <About />
@@ -25,9 +28,6 @@ export default function Routes() {
       </Route>
       <Route path="/signin">
         <SignIn />
-      </Route>
-      <Route path="/welcome">
-        <Welcome />
       </Route>
       <Route>
         <NotFound />
