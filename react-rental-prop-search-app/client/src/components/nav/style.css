@@ -1,13 +1,8 @@
-.navbar-brand {
-  display: flex;
-  align-items: center;
-}
 .navbar-brand > img {
   padding: 5px 5px;
 }
 .navbar {
   background: #b3e0e8;
-  position: fixed;
   font-family: "Rubik", sans-serif;
 }
 

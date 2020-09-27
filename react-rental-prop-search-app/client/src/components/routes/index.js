@@ -7,6 +7,7 @@ import Team from "../../pages/Team";
 import SignIn from "../../pages/SignIn";
 import Results from "../../pages/Results";
 import NotFound from "../../pages/NotFound";
+import Landing from "../../pages/Landing";
 
 export default function Routes() {
   return (
@@ -28,6 +29,9 @@ export default function Routes() {
       </Route>
       <Route path="/results">
         <Results />
+      </Route>
+      <Route path="/landing">
+        <Landing />
       </Route>
       <Route>
         <NotFound />
