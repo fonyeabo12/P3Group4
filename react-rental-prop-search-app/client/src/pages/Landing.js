@@ -6,8 +6,8 @@ class Landing extends Component {
   render() {
     return (
       <Container>
-        <div className="App">
-          <header className="App-header">
+        <div className="landing">
+          <header className="landing-header">
             <img
               src={pslogolg}
               className="PS-logo"
