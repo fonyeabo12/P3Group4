@@ -6,7 +6,7 @@ import Profile from "../../pages/profile";
 import Team from "../../pages/team";
 import SignIn from "../../pages/signin";
 import NotFound from "../../pages/notfound";
-import Landing from "../../pages/landing";
+import Welcome from "../../pages/welcome";
 
 export default function Routes() {
   return (
@@ -26,8 +26,8 @@ export default function Routes() {
       <Route path="/signin">
         <SignIn />
       </Route>
-      <Route path="/landing">
-        <Landing />
+      <Route path="/welcome">
+        <Welcome />
       </Route>
       <Route>
         <NotFound />

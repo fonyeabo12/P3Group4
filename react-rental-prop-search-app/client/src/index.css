@@ -14,11 +14,12 @@
   box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
 }
 .name {
+  color: #36a0b5;
   font-weight: bold;
-  color: black;
 }
 .title {
   color: slategray;
+  font-weight: light;
 }
 
 .email-btn,
@@ -51,22 +52,28 @@ a {
   color: white !important;
 }
 a:hover {
-  color: #0e76a8 !important;
+  color: #36a0b5 !important;
 }
-.landing-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.welcome {
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #b3e0e8;
+}
+.ps-welcome-logo {
+  width: 400px;
 }
 .notfound {
-  background-color: whitesmoke;
   margin: 0;
-  padding: 100px;
+  padding: 50px;
   font-family: "Rubik", sans-serif;
   text-align: center;
+}
+
+.welcome,
+.notfound,
+.team-page {
+  min-height: 100vh;
 }

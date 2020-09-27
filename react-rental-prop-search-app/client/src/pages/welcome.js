@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { Container } from "react-bootstrap";
 import pslogolg from "../Images/ps-full-logo.png";
 
-class Landing extends Component {
+class Welcome extends Component {
   render() {
     return (
-      <div className="landing">
-        <header className="landing-header">
+      <div>
+        <header className="welcome">
+          <h1>Welcome To</h1>
           <img
+            className="ps-welcome-logo"
             src={pslogolg}
-            className="PS-logo"
             alt="Property Search Logotype"
           />
         </header>
@@ -18,4 +18,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default Welcome;
