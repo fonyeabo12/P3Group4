@@ -5,7 +5,7 @@ import axios from 'axios';
     }
 
     function deleteProp(id) {
-        return axios.delete('/api/properties' + id);
+        return axios.delete('/api/properties/' + id);
     }
 
     export {getProps, deleteProp};

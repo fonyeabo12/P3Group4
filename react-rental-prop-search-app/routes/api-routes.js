@@ -43,7 +43,7 @@ router.delete('/properties/:id', (req, res, next) => {
     // to get a single saved property by its id
     // res.send('deleting a single property')
     console.log(req.query);
-    PropertySearch.findById({ _id: req.params.id })
+    PropertySearch.deleteOne({ _id: req.params.id })
         .then((doc) => {
             console.log(doc);
             res.json(doc);

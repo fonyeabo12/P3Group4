@@ -37,13 +37,18 @@ const TestPropertyCard = (props) => {
             .catch(() => {
             console.log('Internal server error');
         });
-
     };
 
-    // const handleDelete = (data) => {
-    //     deleteProp(data)
-    //         .then((res))
-    // }
+    const handleDelete = (data) => {
+        console.log(data);
+        deleteProp(data.streetAddr._id)
+            .then(() => {
+                console.log('Property has been deleted!');
+            })
+            .catch(() => {
+                console.log('Internal server error');
+            })
+    }
 
         return (
 
@@ -75,7 +80,7 @@ const TestPropertyCard = (props) => {
                         </Row>
                         <Row className="">
                             <Button className="align-bottom mx-2 p-3" variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
-                            <Button className="align-bottom mx-2 p-3" variant="danger" className="font-weight-bold">X</Button>{' '}
+                            <Button className="align-bottom mx-2 p-3" variant="danger" onClick={() => handleDelete(props)} className="font-weight-bold">X</Button>{' '}
                         </Row>
 
                 </Card.Body>
