@@ -8,6 +8,7 @@ import SignIn from "../../pages/signin";
 import Results from "../../pages/Results";
 // import Filter from "../../pages/propertyFilter";
 import NotFound from "../../pages/NotFound";
+import Landing from "../../pages/Landing";
 
 export default function Routes() {
   return (
@@ -30,9 +31,9 @@ export default function Routes() {
       <Route path="/results">
         <Results />
       </Route>
-      {/* <Route path="/filter">
-        <Filter />
-      </Route> */}
+      <Route path="/landing">
+        <Landing />
+      </Route>
       <Route>
         <NotFound />
       </Route>

@@ -1,10 +1,18 @@
 import React from "react";
 import "./style.css";
 import pslogosm from "../../Images/ps-simple-logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Col, Nav, Row } from "react-bootstrap";
 
-import { Col, Container, Row } from "react-bootstrap";
+const iconStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-evenly",
+};
+
 function Footer() {
   return (
+    <div className="content">
       <footer>
         <Row className="middle">
           <Col md={3} sm={8}>
@@ -19,17 +27,20 @@ function Footer() {
             </ul>
           </Col>
           <Col md={3} sm={8}>
-            <ul className="list-unstyled">
+            <ul className="list-unstyled" style={iconStyle}>
               <li>
-                FB Icon
+                <FontAwesomeIcon icon={["fab", "twitter-square"]} size="3x" />
               </li>
-              <li>2</li>
-              <li>3</li>
+              <li>
+                <FontAwesomeIcon icon={["fab", "facebook-square"]} size="3x" />
+              </li>
+              <li>
+                <FontAwesomeIcon icon={["fab", "instagram-square"]} size="3x" />
+              </li>
             </ul>
-            This is the social links area
-          </Col>
-          <Col md={3} sm={8}>
-            <h5>Meet The Team</h5>
+            <Nav.Link href="/team">
+              <h5>Meet The Team</h5>
+            </Nav.Link>
           </Col>
         </Row>
         {/* Footer Bottom */}
@@ -39,6 +50,7 @@ function Footer() {
           </p>
         </div>
       </footer>
+    </div>
   );
 }
 export default Footer;
