@@ -11,16 +11,15 @@ class Team extends Component {
   render() {
     return (
       <Container>
-        {" "}
         <div className="team-page">
-          <div className="heading">Meet the Team</div>
+          <div className="team-heading">Meet the Team</div>
           <CardDeck>
             {/* Brandon Jenkins */}
             <Col className="my-5 px-1 pb-5 text-center border-0">
-              <Image className="avatar" src={brandon} />
+              <Image className="team-avatar" src={brandon} />
               <Card.Body>
-                <h5 className="name">Brandon Jenkins</h5>
-                <h6 className="title">Back End</h6>
+                <h5 className="team-name">Brandon Jenkins</h5>
+                <h6 className="team-title">Back End</h6>
                 {/* Github Button */}
                 <span className="github-btn" type="button">
                   <a href="https://github.com/BrandonEJenkins" target="blank">
@@ -38,19 +37,19 @@ class Team extends Component {
                 </span>
                 {/* Email Button */}
                 <span className="email-btn" type="button">
-                  <a href="">
-                    <FontAwesomeIcon icon={["fas", "envelope"]} />
-                  </a>
+                  {/* <a href=""> missin email link */}
+                  <FontAwesomeIcon icon={["fas", "envelope"]} />
+                  {/* </a> */}
                 </span>
               </Card.Body>
             </Col>
 
             {/* Nicholas Foreman */}
             <Col className="my-5 px-1 pb-5 text-center border-0">
-              <Image className="avatar" src={nick} />
+              <Image className="team-avatar" src={nick} />
               <Card.Body>
-                <h5 className="name">Nicholas Foreman</h5>
-                <h6 className="title">Back End</h6>
+                <h5 className="team-name">Nicholas Foreman</h5>
+                <h6 className="team-title">Back End</h6>
                 {/* Github Button */}
                 <span className="github-btn" type="button">
                   <a href="https://github.com/nickforeman4" target="blank">
@@ -77,10 +76,10 @@ class Team extends Component {
 
             {/* Chidi Onyeabo */}
             <Col className="my-5 px-1 pb-5 text-center border-0">
-              <Image className="avatar" src={chidi} />
+              <Image className="team-avatar" src={chidi} />
               <Card.Body>
-                <h5 className="name">Chidi Onyeabo</h5>
-                <h6 className="title">Front End</h6>
+                <h5 className="team-name">Chidi Onyeabo</h5>
+                <h6 className="team-title">Front End</h6>
                 {/* Github Button */}
                 <span className="github-btn" type="button">
                   <a href="https://github.com/fonyeabo12" target="blank">
@@ -98,19 +97,19 @@ class Team extends Component {
                 </span>
                 {/* Email Button */}
                 <span className="email-btn" type="button">
-                  <a href="">
-                    <FontAwesomeIcon icon={["fas", "envelope"]} />
-                  </a>
+                  {/* <a hfef=""> missing email link */}
+                  <FontAwesomeIcon icon={["fas", "envelope"]} />
+                  {/* </a> */}
                 </span>
               </Card.Body>
             </Col>
 
             {/* Pablo Hernandez */}
             <Col className="my-5 px-1 pb-5 text-center border-0">
-              <Image className="avatar" src={pablo} />
+              <Image className="team-avatar" src={pablo} />
               <Card.Body>
-                <h5 className="name">Pablo Hernandez</h5>
-                <h6 className="title">Front End/Designer</h6>
+                <h5 className="team-name">Pablo Hernandez</h5>
+                <h6 className="team-title">Front End/Designer</h6>
                 {/* Github Button */}
                 <span className="github-btn" type="button">
                   <a href="https://github.com/medszilla26" target="blank">

@@ -11,12 +11,12 @@ class Navigation extends Component {
           <img
             src={pslogolg}
             alt="ps brand logotype & symbol"
-            style={{ width: 200 }}
+            style={{ width: 250 }}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav className="ml-auto">
             <Nav.Link href="/search">Search</Nav.Link>
             <Nav.Link href="/profile">Profile</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>

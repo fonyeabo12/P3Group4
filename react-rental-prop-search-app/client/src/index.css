@@ -1,10 +1,26 @@
-.heading {
+a {
+  color: white !important;
+}
+a:hover {
+  color: #36a0b5 !important;
+}
+.about {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  align-content: center;
+}
+.about-text-styling {
+  color: #36a0b5;
+}
+.team-heading,
+.about-heading {
   font-family: "Rubik", sans-serif;
   font-size: 40px;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
-.avatar {
+.team-avatar {
   width: 210px;
   height: 210px;
 
@@ -13,11 +29,11 @@
   -moz-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
   box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
 }
-.name {
+.team-name {
   color: #36a0b5;
   font-weight: bold;
 }
-.title {
+.team-title {
   color: slategray;
   font-weight: light;
 }
@@ -48,14 +64,8 @@
 .email-btn {
   background-color: slategray;
 }
-a {
-  color: white !important;
-}
-a:hover {
-  color: #36a0b5 !important;
-}
+
 .welcome {
-  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,9 +80,13 @@ a:hover {
   padding: 50px;
   font-family: "Rubik", sans-serif;
   text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
 }
 
 .welcome,
+.about,
 .notfound,
 .team-page {
   min-height: 100vh;
