@@ -1,43 +1,6 @@
-.filterBtn {
-    font-size: 24px !important;
+p {
+    font-size: 20px;
 }
-
-.filterBtn:hover {
-    color: white !important;
-    background-color: #36A0B5 !important;
-    cursor: pointer;
-} 
-/* 
-.filterSlider {
-    color: #36A0B5;
-}
- */
-
-
-
-
-
-
-
-
-
-/* .rentalCriteriaFilterBtn {
-    float: right;
-} */
-
-/* .filterCardHeader {
-    font-size: 24 px;
-} */
-
-/* .filterCardHeader {
-    font-size: 24 px;
-} */
-
-
-
-
-
-
 
 /* .searchFieldForms {
     font-size: 24px;

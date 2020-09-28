@@ -11,6 +11,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import houseandkeys from '../../Images/house-and-keys.jpg';
+
 const TestPropertyCard = (props) => {
 
     const [cardData, setCardData] = useState(props.streetAddr)
@@ -53,10 +55,10 @@ const TestPropertyCard = (props) => {
         return (
 
             <Card style={{ width: '18rem' }} className="m-3 text-muted border-0 shadow p-3 mb-5 bg-white rounded">
-                <Card.Img variant="top" src={props.streetAddr} />
+                <Card.Img variant="top" src={houseandkeys} />
                 <Card.Body>
                     <Card.Title>
-                        <h3>Street: {props.streetAddr.addressLine1} </h3>
+                        <h3 className="text-center">{props.streetAddr.addressLine1} </h3>
                     </Card.Title>
 
                     
@@ -64,6 +66,10 @@ const TestPropertyCard = (props) => {
                             <Col>
                                 <Card.Text className="text-left">
                                     Bed: {props.streetAddr.bedrooms}
+                                </Card.Text>
+                            </Col>
+                            <Col>
+                                <Card.Text className="text-left">
                                     Bath: {props.streetAddr.bathrooms}
                                 </Card.Text>
                             </Col>
@@ -72,15 +78,15 @@ const TestPropertyCard = (props) => {
                         <Row>
                             <Col>
                                 <Card.Text className="text-left">
-                                    Rent: {props.streetAddr.price} 
+                                    Rent: ${props.streetAddr.price} 
                                     <br/>
                                     DOM: {props.streetAddr.daysOnMarket}
                                 </Card.Text>
                             </Col>
                         </Row>
                         <Row className="">
-                            <Button className="align-bottom mx-2 p-3" variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
-                            <Button className="align-bottom mx-2 p-3" variant="danger" onClick={() => handleDelete(props)} className="font-weight-bold">X</Button>{' '}
+                            <Button className="align-bottom p-3 m-4" variant="info" onClick={() => handleSave(props)} className="font-weight-bold">+</Button>{' '}
+                            <Button className="align-bottom p-3 m-4" variant="danger" onClick={() => handleDelete(props)} className="font-weight-bold">X</Button>{' '}
                         </Row>
 
                 </Card.Body>

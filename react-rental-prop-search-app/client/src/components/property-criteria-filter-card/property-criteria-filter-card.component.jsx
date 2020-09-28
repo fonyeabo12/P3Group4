@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Card, Button, Form, Row, Col } from 'react-bootstrap';
 
+
+
 const PropertyCriteriaFilterCard = (props) => {
 
     const { showComponent } = props;
@@ -17,9 +19,9 @@ const PropertyCriteriaFilterCard = (props) => {
 
                 <Card.Header>Property Criteria</Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Title>Filter Parameters</Card.Title>
                     <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                        Use the dropdown menus and forms below to refine your property search.
                     </Card.Text>
 
                     <Form>
@@ -69,15 +71,6 @@ const PropertyCriteriaFilterCard = (props) => {
                             </Form.Label>
                             <Col sm="10">
                             <Form.Control type="text" placeholder="Enter State" />
-                            </Col>
-                        </Form.Group>
-
-                        <Form.Group as={Row} controlId="formPlaintextState">
-                            <Form.Label column sm="12" className="text-left">
-                                Zipcode
-                            </Form.Label>
-                            <Col sm="10">
-                            <Form.Control type="text" placeholder="Enter Zipcode" />
                             </Col>
                         </Form.Group>
 

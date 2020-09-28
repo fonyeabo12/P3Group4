@@ -168,63 +168,66 @@ class Home extends React.Component {
           <HeroComponent />
         </Row>
         <Row className="d-flex">
-          <SearchField 
-            city={this.state.city} 
-            zipcode={this.state.zipcode} 
-            submitIt={this.submit} 
-            handleChange={this.handleChange} 
-            fetchData={this.fetchData}
-          />
+
+            <SearchField 
+              city={this.state.city} 
+              zipcode={this.state.zipcode} 
+              submitIt={this.submit} 
+              handleChange={this.handleChange} 
+              fetchData={this.fetchData}
+            />
+
+            <Button className="filterBtn text-muted border-0 p-3 m-4 shadow bg-white rounded" onClick={() => this.hideComponent('showFilters1')}>
+              { this.state.showFilters1 ? 'Hide' : 'Rental Criteria' }
+            </Button>
+
+            <Button className="filterBtn text-muted border-0 p-3 m-4 shadow bg-white rounded" onClick={() => this.hideComponent('showFilters2')}>
+              { this.state.showFilters2 ? 'Hide' : 'Property Criteria Filter' }
+            </Button>
+
         </Row>
 
         <Row>
-          <Button className="mx-auto text-muted border-0 shadow p-3 mb-5 bg-white rounded" onClick={() => this.hideComponent('showFilters1')}>
-            { this.state.showFilters1 ? 'Hide' : 'Rental Criteria' }
-          </Button>
-
-          <Button className="mx-auto text-muted border-0 shadow p-3 mb-5 bg-white rounded" onClick={() => this.hideComponent('showFilters2')}>
-            { this.state.showFilters2 ? 'Hide' : 'Property Criteria Filter' }
-          </Button>
-        </Row>
-
-        <Row>
-          <Col>
+          <Col md={5}>
             {showFilters1 && <RentalCriteriaFilterCard showComponent={this.state.showComponent} />}
           </Col>
 
-          <Col>
+          <Col md={5}>
             {showFilters2 && <PropertyCriteriaFilterCard showComponent={this.state.showComponent} />}
           </Col>
         </Row>
 
-        <Row xs={6} md={4} className="mx-2">
+        <Row className="mx-3">
           {this.state.addressCards1.length ? this.state.addressCards1.map((streetAddr, i) => {
             return (
               <TestPropertyCard 
                 key={i} 
-                streetAddr={streetAddr} 
+                streetAddr={streetAddr}
+                xs={6} md={4}
               />
             ) 
-          })
-        :  <h2>Enter Zipcode and City</h2> }
+                })
+              : <h2 className="d-flex-inline mt-5 text-muted text-left">Enter Zipcode and City</h2> }
         </Row>
 
-        <Row xs={6} md={4} className="mx-2">
+        <Row xs={6} md={4} className="">
           <ul className="list-group list-group-horizontal">
             {this.state.addressCards2.length ? this.state.addressCards2.map((streetAddr, i) => {
             return (
               <li className="list-group-item" key={i}>
-                {streetAddr.averageRent}
-                {streetAddr.minRent}
+                Avg Rent: ${streetAddr.averageRent}
+                <br/>
+                Min Rent: ${streetAddr.minRent}
               </li>
             )})
           :  null }
           </ul> 
         </Row>
 
+          <br/><hr/><br/>
         <Row>
           { this.state.showSaved ? <h2 className="display-3">Saved Content</h2> : null }
-          <Button className="m-5 text-muted border-0 shadow p-3 bg-white rounded" onClick={this.getSavedProperties}>{ this.state.showSaved ? 'Hide' : 'View Saved' }</Button>
+          <Button className="viewSavedBtn m-4 p-3 text-muted border-0 shadow bg-white rounded" onClick={this.getSavedProperties}>{ this.state.showSaved ? 'Hide' : 'View Saved' }</Button>
         </Row>
 
         <Row>

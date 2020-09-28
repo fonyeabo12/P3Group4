@@ -16,11 +16,11 @@ const RentalCriteriaFilterCard = (props) => {
 
                 <Card xs={4} md={4} className="m-3 text-muted border-0 shadow p-3 bg-white rounded">
 
-                <Card.Header>Rental Criteria</Card.Header>
+                <Card.Header className="text-lg">Rental Criteria</Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Title>Filter Parameters</Card.Title>
                     <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                    Use the sliders and forms below to refine your property search.
                     </Card.Text>
 
                     <Form>
@@ -30,7 +30,7 @@ const RentalCriteriaFilterCard = (props) => {
                                 Square Feet
                             </Form.Label>
                             <Col sm="10">
-                                <Form.Control type="range" />
+                                <Form.Control className="filterSlider" type="range" />
                             </Col>
                         </Form.Group>
 
