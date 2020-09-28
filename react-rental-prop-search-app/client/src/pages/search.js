@@ -13,7 +13,7 @@ import HeroComponent from '../components/hero/hero.component.jsx';
 import RentalCriteriaFilterCard from '../components/rental-criteria-filter-card/rental-criteria-filter-card.component.jsx';
 import PropertyCriteriaFilterCard from '../components/property-criteria-filter-card/property-criteria-filter-card.component.jsx';
 
-import '../App.css';
+import '../index.css';
 import { getProps } from '../utils/API.js';
 
 class Home extends React.Component {

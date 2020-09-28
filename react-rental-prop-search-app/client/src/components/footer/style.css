@@ -12,6 +12,8 @@ footer {
 .footer-bottom {
   position: absolute;
   text-align: center;
+  font-weight: lighter;
+  font-size: small;
   bottom: 0;
   left: 0;
   right: 0;
