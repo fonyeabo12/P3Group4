@@ -1,20 +1,21 @@
-# NOTES
+# Description
+* Rental property search application that allows users to find homes for rent in their area.
 
-## MODULES NEEDED: npm i slugify method-override
-will need to replace ":id" with "slug" if slugify used
+# Application
+Rental Property Search Application
 
-## ROUTES LIST
+# Tech Stack
+* Front-End: HTML, CSS, Bootstrap, JavaScript, React.js
+* Back-End: Node.js, Express.js, Mongoose, APIs
 
-### IN server.js
-* "/" - GET - pulls saved property data from model
+# Installation
+* Install app dependencies
+* Run 'npm run dev' at root level to start application
 
-* IN routes > savedProperties.js
-* "/savedProperties/" - lists all saved properties
-* "/savedProperties/edit" - 
-* "/savedProperties/new"
-* "/savedProperties/edit/:id" - GET - user can edit inidvidual saved property entry
-* "/savedProperties/:id" - view individual saved property
-* "/savedProperties/show"
-* "/savedProperties/:id?_method=DELETE" - DELETE - router.delete...findByIdAndDelete
+# Usage
 
-
+# Team Members
+* Nicholas Foreman
+* Pablo Hernandez
+* Brandon Jenkins
+* Chidi Onyeabo

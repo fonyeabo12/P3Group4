@@ -19,6 +19,7 @@ p, li {
 
 .searchFieldBtn {
     font-size: 24px !important;
+    background-color: #c1c1c1 !important;
 }
 
 .searchFieldBtn:hover {

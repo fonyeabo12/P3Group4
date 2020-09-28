@@ -178,7 +178,7 @@ class Home extends React.Component {
               />
 
               <Button className="filterBtn text-muted border-0 p-3 m-4 shadow bg-white rounded" onClick={() => this.hideComponent('showFilters1')}>
-                { this.state.showFilters1 ? 'Hide' : 'Rental Criteria' }
+                { this.state.showFilters1 ? 'Hide' : 'Rental Criteria Filter' }
               </Button>
 
               <Button className="filterBtn text-muted border-0 p-3 m-4 shadow bg-white rounded" onClick={() => this.hideComponent('showFilters2')}>
