@@ -11,8 +11,8 @@ class HeroComponent extends Component {
 
         <Jumbotron className="bg-transparent text-left mb-2 pb-2">
 
-            <h1 className="display-3">Rental Property Search</h1>
-            <p>
+            <h1 className="display-3 mt-5">Rental Property Search</h1>
+            <p className="mb-5">
                 Enter a city and zipcode to find rental properties in your area.  
             </p>
 

@@ -37,9 +37,9 @@ class Team extends Component {
                 </span>
                 {/* Email Button */}
                 <span className="email-btn" type="button">
-                  {/* <a href=""> missin email link */}
+                  <a href="mailto: brandonejenkins@gmail.com">
                   <FontAwesomeIcon icon={["fas", "envelope"]} />
-                  {/* </a> */}
+                  </a>
                 </span>
               </Card.Body>
             </Col>
