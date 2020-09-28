@@ -5,7 +5,9 @@ class Search extends Component {
   render() {
     return (
       <Container>
-        <h2>Hello this the Search Page</h2>
+        <div className="search">
+          <div className="search-heading">Search</div>
+        </div>
       </Container>
     );
   }

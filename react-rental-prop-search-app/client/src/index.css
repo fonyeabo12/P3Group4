@@ -13,7 +13,9 @@ a:hover {
   color: #36a0b5;
 }
 .team-heading,
-.about-heading {
+.about-heading,
+.search-heading,
+.profile-heading {
   font-family: "Rubik", sans-serif;
   font-size: 40px;
   text-align: center;
@@ -88,6 +90,8 @@ a:hover {
 .welcome,
 .about,
 .notfound,
-.team-page {
+.team-page,
+.search,
+.profile {
   min-height: 100vh;
 }
