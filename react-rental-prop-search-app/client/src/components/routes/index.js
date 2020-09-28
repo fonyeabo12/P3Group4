@@ -1,19 +1,21 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "../../pages/Home";
-import About from "../../pages/About";
-import Profile from "../../pages/Profile";
-import Team from "../../pages/Team";
-import SignIn from "../../pages/SignIn";
-import Results from "../../pages/Results";
-import NotFound from "../../pages/NotFound";
-import Landing from "../../pages/Landing";
+import Search from "../../pages/search";
+import About from "../../pages/about";
+import Profile from "../../pages/profile";
+import Team from "../../pages/team";
+import SignIn from "../../pages/signin";
+import NotFound from "../../pages/notfound";
+import Welcome from "../../pages/welcome";
 
 export default function Routes() {
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        <Welcome />
+      </Route>
+      <Route path="/search">
+        <Search />
       </Route>
       <Route path="/about">
         <About />
@@ -26,12 +28,6 @@ export default function Routes() {
       </Route>
       <Route path="/signin">
         <SignIn />
-      </Route>
-      <Route path="/results">
-        <Results />
-      </Route>
-      <Route path="/landing">
-        <Landing />
       </Route>
       <Route>
         <NotFound />

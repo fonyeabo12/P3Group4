@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 
-class Home extends Component {
+class Search extends Component {
   render() {
     return (
       <Container>
-        <h2>Hello this is the Homepage</h2>
+        <div className="search">
+          <div className="search-heading">Search</div>
+        </div>
       </Container>
     );
   }
 }
 
-export default Home;
+export default Search;

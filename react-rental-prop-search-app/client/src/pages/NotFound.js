@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { Col } from "react-bootstrap";
 
 class NotFound extends Component {
   render() {
     return (
-      <div>
-        <h1>404 Not Found</h1>
-      </div>
+      <Col>
+        <h2 className="notfound">404: The Page You Requested is Not Found</h2>
+      </Col>
     );
   }
 }

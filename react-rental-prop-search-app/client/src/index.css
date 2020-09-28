@@ -1,13 +1,97 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a {
+  color: white !important;
+}
+a:hover {
+  color: #36a0b5 !important;
+}
+.about {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  align-content: center;
+}
+.about-text-styling {
+  color: #36a0b5;
+}
+.team-heading,
+.about-heading,
+.search-heading,
+.profile-heading {
+  font-family: "Rubik", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.team-avatar {
+  width: 210px;
+  height: 210px;
+
+  padding: 0;
+  -webkit-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+  box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+}
+.team-name {
+  color: #36a0b5;
+  font-weight: bold;
+}
+.team-title {
+  color: slategray;
+  font-weight: light;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.email-btn,
+.github-btn,
+.linkedin-btn {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50%;
+  position: relative;
+  top: -1px;
+  font-size: 20px;
+  margin: 8px;
+  -webkit-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+  box-shadow: 0px 9px 13px -4px rgba(0, 0, 0, 0.59);
+}
+.github-btn {
+  background-color: #171515;
+}
+.linkedin-btn {
+  background-color: #0e76a8;
+}
+.email-btn {
+  background-color: slategray;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #b3e0e8;
+}
+.ps-welcome-logo {
+  width: 400px;
+}
+.notfound {
+  margin: 0;
+  padding: 50px;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.welcome,
+.about,
+.notfound,
+.team-page,
+.search,
+.profile {
+  min-height: 100vh;
 }
