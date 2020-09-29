@@ -15,6 +15,11 @@ app.use(express.urlencoded({ extended: false }));
 // HTTP request logger
 app.use(morgan('tiny'));
 
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+
 // tells app to handle each endpoint based on the associated file
 app.use('/api', routes);
 
