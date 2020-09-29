@@ -1,0 +1,9 @@
+.filterBtn {
+    font-size: 24px !important;
+}
+
+.filterBtn:hover {
+    color: white !important;
+    background-color: #36A0B5 !important;
+    cursor: pointer;
+} 

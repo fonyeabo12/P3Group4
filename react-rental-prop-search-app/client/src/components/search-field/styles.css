@@ -1,0 +1,29 @@
+p, li {
+    font-size: 20px;
+}
+
+.searchFieldForms {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+
+    border-bottom: 4px solid #c1c1c1;
+    outline: none;
+
+    /* width: 75%; */
+}
+
+/* .searchFieldContainer {
+    float: right;
+} */
+
+.searchFieldBtn {
+    font-size: 24px !important;
+    background-color: #c1c1c1 !important;
+}
+
+.searchFieldBtn:hover {
+    color: white;
+    background-color: #36A0B5 !important;
+    cursor: pointer;
+}

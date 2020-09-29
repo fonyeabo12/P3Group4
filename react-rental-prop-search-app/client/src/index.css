@@ -95,3 +95,18 @@ a:hover {
 .profile {
   min-height: 100vh;
 }
+
+
+.form-input {
+  margin: 10px 0px;
+}
+
+.viewSavedBtn {
+  font-size: 24px !important;
+}
+
+.viewSavedBtn:hover {
+  color: white !important;
+  background-color: #36A0B5 !important;
+  cursor: pointer;
+} 

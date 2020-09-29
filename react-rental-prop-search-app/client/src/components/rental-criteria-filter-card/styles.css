@@ -1,0 +1,65 @@
+.filterBtn {
+    font-size: 24px !important;
+}
+
+.filterBtn:hover {
+    color: white !important;
+    background-color: #36A0B5 !important;
+    cursor: pointer;
+} 
+/* 
+.filterSlider {
+    color: #36A0B5;
+}
+ */
+
+
+
+
+
+
+
+
+
+/* .rentalCriteriaFilterBtn {
+    float: right;
+} */
+
+/* .filterCardHeader {
+    font-size: 24 px;
+} */
+
+/* .filterCardHeader {
+    font-size: 24 px;
+} */
+
+
+
+
+
+
+
+/* .searchFieldForms {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+
+    border-bottom: 4px solid #c1c1c1;
+    outline: none;
+
+    width: 75%;
+}
+
+.searchFieldContainer {
+    float: right;
+}
+
+.searchFieldBtn {
+    font-size: 24px !important;
+}
+
+.searchFieldBtn:hover {
+    color: white;
+    background-color: #36A0B5 !important;
+    cursor: pointer;
+} */
