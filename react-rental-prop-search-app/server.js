@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
@@ -18,10 +19,9 @@ app.use(morgan('tiny'));
 app.use('/api', routes);
 // app.use('/properties', SavedPropertiesRoute);
 
-app.listen(PORT, console.log(`Server is listening at ${PORT}`));
-
-mongoose.connect("mongodb://localhost/react_prop_search", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react_prop_search", {
     useNewUrlParser: true,
+    useFindAndModify: false,
     useUnifiedTopology: true,
 });
 
@@ -29,3 +29,6 @@ mongoose.connect("mongodb://localhost/react_prop_search", {
 mongoose.connection.on("connected", () => {
     console.log("Mongoose is connected!!!");
 });
+
+// DEPLOY START
+app.listen(PORT, console.log(`Server is listening at ${PORT}`));
