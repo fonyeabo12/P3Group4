@@ -17,6 +17,13 @@ app.use(morgan('tiny'));
 
 // tells app to handle each endpoint based on the associated file
 app.use('/api', routes);
+
+// Send every other request to the React app
+// Define any API routes before this runs
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 // app.use('/properties', SavedPropertiesRoute);
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/react_prop_search", {
